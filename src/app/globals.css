@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
+@theme {
+  --color-orange: #F39642;
+  --color-navy: #003F5C;
+  --color-cream: #F5F0E6;
+  --color-dark: #0E1C26;
+  --color-muted: #6B7D8A;
+  --font-display: var(--font-besley), Georgia, serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --orange:       #F39642;
+  --navy:         #003F5C;
+  --cream:        #F5F0E6;
+  --white:        #FFFFFF;
+  --dark:         #0E1C26;
+  --muted:        #6B7D8A;
+  --radius:       14px;
+  --radius-pill:  50px;
+  --max-width:    1200px;
+  --section-py:   96px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.voxx-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ServiceCard hover — CSS only, no JS handlers */
+.service-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.service-card:hover {
+  box-shadow: 0 20px 48px rgba(0, 63, 92, 0.10);
+  transform: translateY(-4px);
+}
+
+/* Client logos marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee 20s linear infinite;
+  width: max-content;
 }
