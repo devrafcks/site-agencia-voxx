@@ -3,6 +3,7 @@ import { Besley, DM_Sans } from "next/font/google";
 import { AccessibilityWidget } from "@/components/accessibility-widget";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const besley = Besley({
@@ -39,7 +40,9 @@ export default function RootLayout({
         </div>
         <Footer />
         <AccessibilityWidget />
+        <WhatsAppButton />
       </body>
     </html>
   );
 }
+
