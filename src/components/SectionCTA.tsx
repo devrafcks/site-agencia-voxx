@@ -10,12 +10,13 @@ type SectionCTAProps = {
 
 function renderHeadline(headline: string, accentWord?: string) {
   if (!accentWord) return <>{headline}</>
-  const parts = headline.split(accentWord)
+  const idx = headline.indexOf(accentWord)
+  if (idx === -1) return <>{headline}</>
   return (
     <>
-      {parts[0]}
+      {headline.slice(0, idx)}
       <span className="text-orange">{accentWord}</span>
-      {parts[1]}
+      {headline.slice(idx + accentWord.length)}
     </>
   )
 }
