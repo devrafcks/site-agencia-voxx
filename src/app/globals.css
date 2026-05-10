@@ -20,7 +20,7 @@
   --radius:       14px;
   --radius-pill:  50px;
   --max-width:    1200px;
-  --section-py:   96px;
+  --section-py:   120px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -30,6 +30,20 @@ body {
   background: var(--cream);
   color: var(--dark);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Global Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-image: url('/texture.avif');
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 h1, h2, h3, h4 {
@@ -41,10 +55,12 @@ h1, h2, h3, h4 {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
 }
 
 .section {
   padding: var(--section-py) 0;
+  position: relative;
 }
 
 /* Scroll reveal */

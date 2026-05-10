@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     "Estratégia, criatividade e tecnologia integradas para gerar resultados reais para o seu negócio.",
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -32,7 +34,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${besley.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col bg-cream text-dark antialiased">
         <Navbar />
-        <div id="seeb-content-wrapper" className="flex-1 flex flex-col pt-16">
+        <div id="seeb-content-wrapper" className="flex-1 flex flex-col relative">
           {children}
         </div>
         <Footer />

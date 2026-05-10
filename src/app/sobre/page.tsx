@@ -1,165 +1,185 @@
 'use client'
-import Image from 'next/image'
-import { CheckCircle2 } from 'lucide-react'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
-import SectionLabel from '@/components/SectionLabel'
-import SectionCTA from '@/components/SectionCTA'
 
-const diferenciais = [
-  'Estratégia personalizada',
-  'Atendimento próximo',
-  'Entrega no prazo',
-  'Time especializado',
-  'Relatórios transparentes',
-  'Foco em resultado',
-]
+import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { ArrowRight, Star } from 'lucide-react'
+import SectionCTA from '@/components/SectionCTA'
+import SectionLabel from '@/components/SectionLabel'
+import { useRef } from 'react'
+import Link from 'next/link'
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as any } }
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+}
 
 export default function Sobre() {
-  useScrollReveal()
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start end", "end start"] })
+  const yImage = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
 
   return (
-    <main>
-      {/* ─── Page Hero ────────────────────────────────────────── */}
-      <section className="section" style={{ background: 'var(--navy)', paddingBottom: '80px' }}>
-        <div className="voxx-container text-center">
-          <h1
-            className="font-display font-black text-white mb-5"
-            style={{ fontSize: 'clamp(2.25rem, 4vw, 3.5rem)' }}
-          >
-            Nossa história,{' '}
-            <span className="text-orange">nossa identidade</span>
-          </h1>
-          <p
-            className="font-body text-lg max-w-lg mx-auto"
-            style={{ color: 'rgba(255,255,255,0.65)' }}
-          >
-            Construímos marcas com propósito desde 2016.
-          </p>
-        </div>
-      </section>
+    <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
+      {/* ─── Manifesto / Hero ────────────────────────────────────────── */}
+      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-navy">
+        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-cream/5 pointer-events-none rounded-bl-[100px] lg:rounded-bl-[200px]" />
+        <div className="voxx-container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="lg:col-span-7">
+              <motion.h1 variants={fadeInUp} className="font-display font-black text-white leading-[1.1] mb-8" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+                Nós não seguimos <span className="text-orange italic">tendências.</span> <br/>
+                Nós criamos o novo padrão.
+              </motion.h1>
+              <motion.div variants={fadeInUp} className="font-body text-cream/70 text-base lg:text-xl leading-relaxed space-y-6 max-w-2xl border-l-4 border-orange/30 pl-6">
+                <p>
+                  Acreditamos que a comunicação medíocre custa caro. Em um mundo saturado de informações, apenas as marcas que ousam ser extraordinárias conseguem espaço na mente do consumidor.
+                </p>
+                <p className="hidden md:block">
+                  A Voxx nasceu para ser o ponto de virada para empresas que decidiram deixar de ser apenas mais uma opção e passar a ser a <strong>única escolha lógica</strong>.
+                </p>
+              </motion.div>
+            </motion.div>
 
-      {/* ─── História ─────────────────────────────────────────── */}
-      <section className="section">
-        <div className="voxx-container">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="flex-1 reveal">
-              <SectionLabel>Nossa história</SectionLabel>
-              <p className="font-body text-dark leading-relaxed mb-5">
-                A Voxx nasceu em 2016 com uma missão clara: transformar a forma como marcas se
-                comunicam com seu público. Começamos como uma pequena equipe de estrategistas e
-                designers apaixonados por resultados reais — não apenas pelo estético, mas pelo
-                impacto mensurável.
-              </p>
-              <p className="font-body text-muted leading-relaxed mb-8">
-                Acreditamos que comunicação eficiente vai além da estética. Ela conecta, convence
-                e converte. Por isso, integramos estratégia, criatividade e tecnologia em cada
-                projeto, do briefing à entrega. Hoje, somos uma equipe multidisciplinar com
-                projetos em todo o Brasil, atendendo desde startups em crescimento até marcas
-                consolidadas que buscam se reinventar.
-              </p>
-              <blockquote
-                className="pl-6 py-2 font-display italic text-dark"
-                style={{
-                  borderLeft: '4px solid var(--orange)',
-                  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                }}
-              >
-                "Comunicação que não gera resultado é apenas ruído. Nosso trabalho é fazer sua
-                marca falar com as pessoas certas, da forma certa, no momento certo."
-              </blockquote>
-            </div>
-            <div className="flex-1 reveal">
-              <div
-                className="relative w-full"
-                style={{ borderRadius: 'var(--radius)', overflow: 'hidden', aspectRatio: '4/3' }}
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop"
-                  alt="Escritório moderno da Voxx"
-                  fill
-                  className="object-cover"
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="lg:col-span-5 relative">
+              <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden shadow-2xl">
+                <Image 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" 
+                  alt="Equipe liderando reunião estratégica" 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover" 
+                  priority 
                 />
+                <div className="absolute inset-0 bg-navy/20 mix-blend-overlay" />
               </div>
-            </div>
+
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
+                className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl border border-navy/5 max-w-[240px]"
+              >
+                <Star className="text-orange mb-4" fill="currentColor" size={32} />
+                <p className="font-display font-bold text-navy text-xl leading-tight">Agência Premium do Ano</p>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ─── Missão / Visão / Valores ─────────────────────────── */}
-      <section className="section" style={{ background: '#EDE7D9' }}>
-        <div className="voxx-container">
-          <div className="text-center mb-12 reveal">
-            <SectionLabel>Nossos pilares</SectionLabel>
-            <h2
-              className="font-display font-bold text-dark"
-              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
-            >
-              O que nos <span className="text-orange">guia</span>
+      {/* ─── Timeline / Storytelling ─────────────────────────────────────────── */}
+      <section className="py-32 bg-cream text-navy relative overflow-hidden" ref={containerRef}>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay" />
+        
+        <div className="voxx-container relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mb-24 md:w-1/2">
+            <h2 className="font-display font-black leading-tight text-navy mb-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+              Nossa <span className="text-orange italic">evolução</span> não para.
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              className="p-8 reveal"
-              style={{ background: 'var(--orange)', borderRadius: 'var(--radius)' }}
-            >
-              <h3 className="font-display font-bold text-white text-xl mb-4">Missão</h3>
-              <p className="font-body leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                Conectar marcas às pessoas certas com estratégia e criatividade, gerando resultados
-                reais e duradouros para nossos clientes.
-              </p>
-            </div>
-            <div
-              className="p-8 bg-white reveal"
-              style={{ borderRadius: 'var(--radius)', border: '1px solid #E8E4DC' }}
-            >
-              <h3 className="font-display font-bold text-dark text-xl mb-4">Visão</h3>
-              <p className="font-body text-muted leading-relaxed">
-                Ser referência em comunicação integrada no mercado nacional, reconhecida pela
-                excelência estratégica e pelos resultados que entregamos.
-              </p>
-            </div>
-            <div
-              className="p-8 bg-white reveal"
-              style={{ borderRadius: 'var(--radius)', border: '1px solid #E8E4DC' }}
-            >
-              <h3 className="font-display font-bold text-dark text-xl mb-4">Valores</h3>
-              <p className="font-body text-muted leading-relaxed">
-                Transparência · Resultado · Inovação · Parceria
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <p className="font-body text-muted text-lg">Uma jornada de obsessão por resultados e inovação criativa.</p>
+          </motion.div>
 
-      {/* ─── Diferenciais ─────────────────────────────────────── */}
-      <section className="section">
-        <div className="voxx-container">
-          <div className="text-center mb-12 reveal">
-            <SectionLabel>Diferenciais</SectionLabel>
-            <h2
-              className="font-display font-bold text-dark"
-              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
-            >
-              Por que somos <span className="text-orange">diferentes</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto reveal">
-            {diferenciais.map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <CheckCircle2 size={20} className="text-orange flex-shrink-0" />
-                <span className="font-body text-dark">{item}</span>
-              </div>
+          <div className="space-y-24 relative">
+            {/* Linha conectora */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-navy/10 -translate-x-1/2" />
+
+            {[
+              { year: '2016', title: 'O Início', desc: 'Fundação da Voxx como um estúdio de design focado em identidade visual de alto padrão.', align: 'md:text-right md:pr-16 md:mr-auto' },
+              { year: '2019', title: 'A Virada Digital', desc: 'Integração de serviços de performance e desenvolvimento web, formando o modelo 360º de sucesso.', align: 'md:text-left md:pl-16 md:ml-auto' },
+              { year: '2023', title: 'Expansão Nacional', desc: 'Operação atendendo os maiores players do mercado nacional, consolidando nosso método único de trabalho.', align: 'md:text-right md:pr-16 md:mr-auto' },
+              { year: 'Hoje', title: 'O Futuro', desc: 'Sempre buscando a próxima fronteira tecnológica e criativa para colocar nossos clientes em vantagem.', align: 'md:text-left md:pl-16 md:ml-auto' },
+            ].map((item, i) => (
+              <motion.div 
+                key={item.year}
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} transition={{ delay: i * 0.1 }}
+                className={`relative flex flex-col md:w-1/2 ${item.align} pl-12 md:pl-0`}
+              >
+                {/* Dot */}
+                <div className="absolute left-4 md:left-[unset] md:right-0 top-0 w-8 h-8 rounded-full bg-cream border-4 border-orange -translate-x-1/2 md:translate-x-1/2 z-10" />
+                
+                <span className="font-display font-black text-orange/20 text-5xl md:text-7xl mb-2">{item.year}</span>
+                <h3 className="font-display font-bold text-navy text-2xl md:text-3xl mb-4">{item.title}</h3>
+                <p className="font-body text-muted text-lg leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <SectionCTA
-        dark
-        headline="Quer trabalhar com quem entende do seu negócio?"
-        buttonLabel="Fale com a Voxx"
-        href="/contato"
-      />
+      {/* ─── Editorial Image Grid ─────────────────────────────────────── */}
+      <section className="py-32 bg-cream">
+        <div className="voxx-container">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="md:col-span-8 relative rounded-3xl overflow-hidden group aspect-[4/3] md:aspect-auto">
+              <Image 
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80&auto=format&fit=crop" 
+                alt="Equipe de estratégia" 
+                fill 
+                sizes="(max-width: 768px) 100vw, 60vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-navy/20 mix-blend-overlay" />
+              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl max-w-sm">
+                <h4 className="font-display font-bold text-navy text-xl mb-2">Estratégia Colaborativa</h4>
+                <p className="font-body text-sm text-muted">A inteligência coletiva é o que diferencia uma boa ideia de uma execução genial.</p>
+              </div>
+            </motion.div>
+            <div className="md:col-span-4 grid grid-rows-2 gap-6">
+               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }} className="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&auto=format&fit=crop" 
+                    alt="Desenvolvimento" 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 30vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+               </motion.div>
+               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.4 }} className="bg-orange rounded-3xl p-8 flex flex-col justify-center text-white">
+                  <span className="font-display text-6xl font-black mb-4">100%</span>
+                  <p className="font-body text-lg font-medium">De comprometimento com o resultado final de cada parceiro.</p>
+               </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Valores ─────────────────────────────────────── */}
+      <section className="py-32 bg-white relative">
+        <div className="voxx-container">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-20">
+             <SectionLabel>DNA da Agência</SectionLabel>
+            <h2 className="font-display font-black text-navy leading-tight mt-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+              Os pilares que <br/> sustentam nosso <span className="text-orange italic">trabalho.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              { title: 'Inovação Inquieta', desc: 'O que funcionou ontem pode não funcionar amanhã. Estamos sempre um passo à frente testando novas abordagens.' },
+              { title: 'Estética com Propósito', desc: 'Design bonito sem conversão é arte. Nós fazemos design para negócios: focado em gerar desejo e vendas.' },
+              { title: 'Transparência Brutal', desc: 'Dados não mentem. Compartilhamos o cenário real, as métricas e os próximos passos sem meias palavras.' },
+              { title: 'Parceria Verdadeira', desc: 'Não somos fornecedores, somos o braço direito do seu crescimento. Seu sucesso é literalmente o nosso negócio.' },
+            ].map((v, i) => (
+              <motion.div 
+                key={v.title}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1 }}
+                className="p-10 border border-navy/10 rounded-3xl hover:border-orange/30 hover:shadow-xl transition-all duration-300 bg-cream/30"
+              >
+                <div className="w-12 h-12 bg-orange/10 text-orange rounded-xl flex items-center justify-center mb-6 font-display font-bold text-xl">
+                  {i + 1}
+                </div>
+                <h3 className="font-display font-bold text-navy text-2xl mb-4">{v.title}</h3>
+                <p className="font-body text-muted leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionCTA />
     </main>
   )
 }

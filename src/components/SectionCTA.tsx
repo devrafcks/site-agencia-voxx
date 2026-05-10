@@ -1,54 +1,40 @@
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 type SectionCTAProps = {
-  headline: string
+  headline?: string
   accentWord?: string
   buttonLabel?: string
   href?: string
-  dark?: boolean
-}
-
-function renderHeadline(headline: string, accentWord?: string) {
-  if (!accentWord) return <>{headline}</>
-  const idx = headline.indexOf(accentWord)
-  if (idx === -1) return <>{headline}</>
-  return (
-    <>
-      {headline.slice(0, idx)}
-      <span className="text-orange">{accentWord}</span>
-      {headline.slice(idx + accentWord.length)}
-    </>
-  )
 }
 
 export default function SectionCTA({
-  headline,
-  accentWord,
-  buttonLabel = 'Fale com a gente',
+  headline = 'Vamos construir o próximo capítulo da sua história?',
+  accentWord = 'próximo capítulo',
+  buttonLabel = 'Fale com nossos especialistas',
   href = '/contato',
-  dark = false,
 }: SectionCTAProps) {
+  const parts = accentWord ? headline.split(accentWord) : [headline, '']
+  
   return (
-    <section
-      className="section"
-      style={{ background: dark ? 'var(--navy)' : 'var(--orange)' }}
-    >
-      <div className="voxx-container text-center">
-        <h2
-          className="font-display text-3xl md:text-4xl font-bold text-white mb-8 leading-tight"
-        >
-          {renderHeadline(headline, accentWord)}
+    <section className="py-32 bg-navy relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-10 mix-blend-overlay" />
+      
+      <div className="voxx-container relative z-10 text-center">
+        <h2 className="font-display font-black text-white text-4xl md:text-6xl mb-12 max-w-4xl mx-auto leading-tight">
+          {parts[0]}
+          {accentWord && <span className="text-orange">{accentWord}</span>}
+          {parts[1]}
         </h2>
-        <Link
-          href={href}
-          className={
-            dark
-              ? 'inline-flex items-center gap-2 px-8 py-4 rounded-full font-body font-medium text-sm bg-orange text-white hover:bg-[#e08535] transition-colors'
-              : 'inline-flex items-center gap-2 px-8 py-4 rounded-full font-body font-medium text-sm border-2 border-white text-white hover:bg-white hover:text-orange transition-colors'
-          }
-        >
-          {buttonLabel}
-        </Link>
+        <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 17 }} className="inline-block">
+          <Link 
+            href={href} 
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-orange text-white font-body font-bold text-xl shadow-[0_0_40px_rgba(243,150,66,0.3)]"
+          >
+            {buttonLabel} <ArrowRight size={20} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   )
