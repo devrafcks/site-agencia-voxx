@@ -1,0 +1,72 @@
+.carousel {
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.track {
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.track:hover .inner {
+  animation-play-state: paused;
+}
+
+.inner {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.card {
+  flex-shrink: 0;
+  width: 520px;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cardImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  background: rgba(0, 63, 92, 0.65);
+  color: #F5F0E6;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .card { width: 320px; height: 320px; }
+}

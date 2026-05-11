@@ -1,11 +1,7 @@
 'use client'
-import { useState } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import SectionCTA from '@/components/SectionCTA'
-
-const categories = ['Todos', 'Branding', 'Web', 'Performance']
+import ProjectsCarousel from '@/components/ProjectsCarousel'
 
 const projects = [
   { id: 1, image: '1522202176988-66273c2fd55f', category: 'Branding', title: 'Rebranding Nexus Corp', desc: 'Identidade visual completa e posicionamento global para líder de logística.' },
@@ -22,25 +18,23 @@ const fadeInUp = {
 }
 
 export default function Projetos() {
-  const [activeFilter, setActiveFilter] = useState('Todos')
-  
-  const filteredProjects = projects.filter(p => activeFilter === 'Todos' || p.category === activeFilter)
+  const half = Math.ceil(projects.length / 2)
+  const row1 = projects.slice(0, half)
+  const row2 = projects.slice(half)
 
   return (
     <main className="overflow-x-hidden bg-white selection:bg-orange/20 selection:text-navy">
       {/* ─── Hero ────────────────────────────────────────── */}
-      <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden bg-navy text-white">
+      <section className="relative pt-40 pb-32 md:pt-52 md:pb-48 overflow-hidden bg-navy text-white section-grid">
         <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-20 mix-blend-overlay" />
-        
-        {/* Decorative elements */}
         <div className="absolute top-1/2 -right-20 w-96 h-96 bg-orange/5 blur-[120px] rounded-full hidden lg:block" />
         <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-orange/5 blur-[100px] rounded-full" />
 
         <div className="voxx-container relative z-10">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="max-w-4xl">
-            <h1 className="font-display font-black text-white leading-tight mb-8" style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' }}>
+            <h1 className="font-display font-normal text-white leading-tight mb-8" style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' }}>
                Onde a visão <br/>
-               <span className="text-orange italic">toma forma.</span>
+               <span className="text-orange italic accent-line">toma forma.</span>
             </h1>
             <p className="font-body text-cream/70 text-xl max-w-2xl leading-relaxed">
               Explore nossa galeria de casos de sucesso. Cada projeto é um manifesto de como unimos estratégia impecável e execução criativa.
@@ -49,75 +43,10 @@ export default function Projetos() {
         </div>
       </section>
 
-      {/* ─── Filtros ─────────────────────────────────── */}
-      <section className="py-12 bg-white border-b border-navy/5">
-         <div className="voxx-container">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap items-center gap-4">
-               {categories.map(cat => (
-                  <button 
-                    key={cat}
-                    onClick={() => setActiveFilter(cat)}
-                    className={`px-6 py-3 rounded-full font-body font-bold text-sm uppercase tracking-wider transition-all duration-300 ${
-                       activeFilter === cat 
-                         ? 'bg-orange text-white shadow-lg shadow-orange/20' 
-                         : 'bg-cream text-navy border border-navy/5 hover:border-orange hover:text-orange'
-                    }`}
-                  >
-                     {cat}
-                  </button>
-               ))}
-            </motion.div>
-         </div>
-      </section>
-
-      {/* ─── Grid de Projetos ─────────────────────────────────── */}
-      <section className="py-24 bg-white min-h-[800px]">
-        <div className="voxx-container">
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-
-            <AnimatePresence mode="popLayout">
-               {filteredProjects.map((p, i) => (
-                 <motion.div 
-                   key={p.id}
-                   layout
-                   initial={{ opacity: 0, scale: 0.9 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   exit={{ opacity: 0, scale: 0.9 }}
-                   transition={{ duration: 0.5, ease: "easeInOut" }}
-                   whileHover={{ y: -10 }}
-                   whileTap={{ scale: 0.98 }}
-                   className="group cursor-pointer"
-                 >
-                   <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-navy/5 mb-6">
-                      <Image 
-                        src={`https://images.unsplash.com/photo-${p.image}?w=1000&q=80&auto=format&fit=crop`} 
-                        alt={p.title} 
-                        fill 
-                        sizes="(max-width: 768px) 100vw, 45vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                      />
-                      <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/40 transition-colors duration-500" />
-                      
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                         <div className="w-16 h-16 bg-orange text-white rounded-full flex items-center justify-center scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
-                            <ArrowUpRight size={32} />
-                         </div>
-                      </div>
-                   </div>
-                   
-                   <div>
-                      <div className="flex items-center gap-3 mb-3">
-                         <span className="w-8 h-[1px] bg-orange" />
-                         <span className="font-body text-orange text-xs font-bold uppercase tracking-widest">{p.category}</span>
-                      </div>
-                      <h3 className="font-display font-bold text-navy text-3xl mb-3 group-hover:text-orange transition-colors">{p.title}</h3>
-                      <p className="font-body text-muted text-lg leading-relaxed">{p.desc}</p>
-                   </div>
-                 </motion.div>
-               ))}
-            </AnimatePresence>
-          </motion.div>
-        </div>
+      {/* ─── Carrossel — invade o hero com margem negativa ────────── */}
+      <section className="bg-white pb-24 -mt-16 md:-mt-40">
+        <ProjectsCarousel projects={row1} />
+        <ProjectsCarousel projects={row2} reverse />
       </section>
 
       <SectionCTA />
