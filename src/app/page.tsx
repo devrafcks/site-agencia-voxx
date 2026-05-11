@@ -32,7 +32,7 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
 
   return (
-    <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
+    <main className="relative overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
       <section ref={heroRef} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-navy pt-48 pb-24">
         <motion.div 
           style={{ y, opacity }} 

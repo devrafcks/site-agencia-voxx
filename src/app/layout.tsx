@@ -4,6 +4,7 @@ import { AccessibilityWidget } from "@/components/accessibility-widget";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LoadingScreen from "@/components/LoadingScreen";
 import "./globals.css";
 
 const besley = Besley({
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${besley.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col bg-cream text-dark antialiased">
+        <LoadingScreen />
         <Navbar />
         <main id="seeb-content-wrapper" className="flex-1 flex flex-col relative">
           {children}
