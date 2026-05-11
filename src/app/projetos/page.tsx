@@ -27,16 +27,22 @@ export default function Projetos() {
   const filteredProjects = projects.filter(p => activeFilter === 'Todos' || p.category === activeFilter)
 
   return (
-    <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
+    <main className="overflow-x-hidden bg-white selection:bg-orange/20 selection:text-navy">
       {/* ─── Hero ────────────────────────────────────────── */}
-      <section className="pt-40 pb-12 md:pt-52 md:pb-20">
-        <div className="voxx-container">
+      <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden bg-navy text-white">
+        <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-20 mix-blend-overlay" />
+        
+        {/* Decorative elements */}
+        <div className="absolute top-1/2 -right-20 w-96 h-96 bg-orange/5 blur-[120px] rounded-full hidden lg:block" />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-orange/5 blur-[100px] rounded-full" />
+
+        <div className="voxx-container relative z-10">
           <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="max-w-4xl">
-            <h1 className="font-display font-black text-navy leading-tight mb-8" style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' }}>
+            <h1 className="font-display font-black text-white leading-tight mb-8" style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' }}>
                Onde a visão <br/>
                <span className="text-orange italic">toma forma.</span>
             </h1>
-            <p className="font-body text-muted text-xl max-w-2xl leading-relaxed">
+            <p className="font-body text-cream/70 text-xl max-w-2xl leading-relaxed">
               Explore nossa galeria de casos de sucesso. Cada projeto é um manifesto de como unimos estratégia impecável e execução criativa.
             </p>
           </motion.div>
@@ -44,7 +50,7 @@ export default function Projetos() {
       </section>
 
       {/* ─── Filtros ─────────────────────────────────── */}
-      <section className="pb-8">
+      <section className="py-12 bg-white border-b border-navy/5">
          <div className="voxx-container">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap items-center gap-4">
                {categories.map(cat => (
@@ -53,8 +59,8 @@ export default function Projetos() {
                     onClick={() => setActiveFilter(cat)}
                     className={`px-6 py-3 rounded-full font-body font-bold text-sm uppercase tracking-wider transition-all duration-300 ${
                        activeFilter === cat 
-                         ? 'bg-navy text-white shadow-lg shadow-navy/20' 
-                         : 'bg-white text-navy border border-navy/10 hover:border-orange hover:text-orange'
+                         ? 'bg-orange text-white shadow-lg shadow-orange/20' 
+                         : 'bg-cream text-navy border border-navy/5 hover:border-orange hover:text-orange'
                     }`}
                   >
                      {cat}
@@ -65,9 +71,10 @@ export default function Projetos() {
       </section>
 
       {/* ─── Grid de Projetos ─────────────────────────────────── */}
-      <section className="py-16 bg-cream min-h-[800px]">
+      <section className="py-24 bg-white min-h-[800px]">
         <div className="voxx-container">
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+
             <AnimatePresence mode="popLayout">
                {filteredProjects.map((p, i) => (
                  <motion.div 
