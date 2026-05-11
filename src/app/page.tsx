@@ -187,7 +187,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
-              { img: '1522202176988-66273c2fd55f', cat: 'Branding Institucional', title: 'Rebranding Consultoria Global', span: 'md:col-span-2 aspect-[21/9]' },
+              { img: '1522202176988-66273c2fd55f', cat: 'Branding Institucional', title: 'Rebranding Consultoria Global', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
               { img: '1460925895917-afdab827c52f', cat: 'Plataforma Web', title: 'Portal Corporativo B2B', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
               { img: '1542744173-8e7e53415bb0', cat: 'Campanha Digital', title: 'Lançamento de Produto Tech', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
             ].map((p, i) => (
