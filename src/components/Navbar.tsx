@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -13,9 +14,11 @@ const navLinks = [
   { href: '/contato',   label: 'Contato' },
 ]
 
+
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false)
   const [menuOpen, setMenuOpen]   = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -86,23 +89,29 @@ export default function Navbar() {
           >
             <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-10 mix-blend-overlay pointer-events-none" />
             <nav className="flex flex-col items-center gap-6 md:gap-10 relative z-10 w-full px-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ delay: 0.2 + i * 0.05, duration: 0.5 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="font-display text-white text-2xl md:text-4xl lg:text-5xl font-black hover:text-orange transition-colors uppercase tracking-tight"
-                    onClick={() => setMenuOpen(false)}
+              {navLinks.map((link, i) => {
+                const isActive = pathname === link.href
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.2 + i * 0.05, duration: 0.5 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className={`font-display text-2xl md:text-4xl lg:text-5xl font-black transition-colors uppercase tracking-tight ${
+                        isActive ? 'text-orange' : 'text-white hover:text-orange'
+                      }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                )
+              })}
+
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
