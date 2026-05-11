@@ -8,9 +8,10 @@ export default function AlgoliaBlueButton({ children, className, ...props }: Alg
   return ( 
     <button 
       className={cn(
-        "algolia-orange-btn relative box-border inline-flex h-12 cursor-pointer touch-manipulation items-center justify-center overflow-hidden whitespace-nowrap rounded-md border-0 bg-orange px-6 font-mono leading-none text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5",
+        "algolia-orange-btn relative box-border inline-flex h-12 cursor-pointer touch-manipulation items-center justify-center overflow-hidden whitespace-nowrap rounded-md border-0 bg-orange px-6 font-body leading-none text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5",
         className
       )}
+
       {...props}
     > 
       <style>{` 
