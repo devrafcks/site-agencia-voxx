@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
-      <section ref={heroRef} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-navy pt-32 pb-24">
+      <section ref={heroRef} className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-navy pt-48 pb-24">
         <motion.div 
           style={{ y, opacity }} 
           className="absolute inset-0 z-0 h-[140%] w-full will-change-transform"
@@ -72,14 +72,14 @@ export default function Home() {
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row items-center gap-4"
             >
               <Link href="/contato" className="w-full sm:w-auto">
-                <AlgoliaBlueButton className="w-full sm:w-auto h-[54px] px-8 text-base rounded-full font-body font-bold">
+                <AlgoliaBlueButton className="w-full sm:w-auto h-14 px-8 text-base rounded-full font-body font-bold">
                   Iniciar Projeto
                 </AlgoliaBlueButton>
               </Link>
-              <Link href="/projetos" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-4 rounded-full border border-white/20 text-white font-body font-bold text-base backdrop-blur-sm hover:bg-white hover:text-navy transition-all duration-300">
+              <Link href="/projetos" className="w-full sm:w-auto inline-flex items-center justify-center h-14 px-8 rounded-full border border-white/20 text-white font-body font-bold text-base backdrop-blur-sm hover:bg-white hover:text-navy transition-all duration-300">
                 Nosso Portfólio
               </Link>
             </motion.div>
