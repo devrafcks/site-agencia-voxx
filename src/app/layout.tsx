@@ -8,25 +8,22 @@ import "./globals.css";
 
 const besley = Besley({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["700", "900"],
   variable: "--font-besley",
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   variable: "--font-dm-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Voxx | Agência de Comunicação",
-  description:
-    "Estratégia, criatividade e tecnologia integradas para gerar resultados reais para o seu negócio.",
+  description: "Estratégia, criatividade e tecnologia integradas para gerar resultados reais para o seu negócio.",
 };
-
-
 
 export default function RootLayout({
   children,
@@ -35,9 +32,9 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${besley.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col bg-cream text-dark antialiased">
         <Navbar />
-        <div id="seeb-content-wrapper" className="flex-1 flex flex-col relative">
+        <main id="seeb-content-wrapper" className="flex-1 flex flex-col relative">
           {children}
-        </div>
+        </main>
         <Footer />
         <AccessibilityWidget />
         <WhatsAppButton />
@@ -45,4 +42,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
