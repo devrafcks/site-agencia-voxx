@@ -19,7 +19,7 @@
   --muted:        #6B7D8A;
   --radius:       14px;
   --radius-pill:  50px;
-  --max-width:    1200px;
+  --max-width:    1440px;
   --section-py:   120px;
 }
 
@@ -27,7 +27,11 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
   color: var(--dark);
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -54,7 +58,7 @@ h1, h2, h3, h4 {
 .voxx-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 4vw, 64px);
   position: relative;
 }
 
@@ -93,4 +97,47 @@ h1, h2, h3, h4 {
   gap: 4rem;
   animation: marquee 20s linear infinite;
   width: max-content;
+}
+
+/* ── Section grid overlay (for dark sections) ─────────────────────────── */
+.section-grid {
+  position: relative;
+}
+.section-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dashed editorial callout frame ──────────────────────────────────── */
+.dashed-frame {
+  border: 1.5px dashed currentColor;
+  border-radius: 20px;
+  padding: clamp(16px, 4vw, 28px) clamp(20px, 5vw, 36px);
+}
+
+/* ── TV illustration blend helper ────────────────────────────────────── */
+.tv-blend {
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ── Accent underline for headline keywords ───────────────────────────── */
+.accent-line {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+}
+.accent-line-navy {
+  text-decoration: underline;
+  text-decoration-color: var(--navy);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
 }
