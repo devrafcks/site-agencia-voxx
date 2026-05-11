@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Star } from 'lucide-react'
+import { ArrowRight, Star } from '@phosphor-icons/react'
 import SectionCTA from '@/components/SectionCTA'
 import SectionLabel from '@/components/SectionLabel'
 import { useRef } from 'react'
@@ -26,21 +26,21 @@ export default function Sobre() {
   return (
     <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
       {/* ─── Manifesto / Hero ────────────────────────────────────────── */}
-      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-navy">
+      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-navy section-grid">
         <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-cream/5 pointer-events-none rounded-bl-[100px] lg:rounded-bl-[200px]" />
         <div className="voxx-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="lg:col-span-7">
-              <motion.h1 variants={fadeInUp} className="font-display font-black text-white leading-[1.1] mb-8" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
-                Nós não seguimos <span className="text-orange italic">tendências.</span> <br/>
-                Nós criamos o novo padrão.
+              <motion.h1 variants={fadeInUp} className="font-display font-normal text-white leading-[1.1] mb-8" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+                Agência 360° <br/>
+                <span className="text-orange italic">parceira do seu crescimento.</span>
               </motion.h1>
               <motion.div variants={fadeInUp} className="font-body text-cream/70 text-base lg:text-xl leading-relaxed space-y-6 max-w-2xl border-l-4 border-orange/30 pl-6">
                 <p>
-                  Acreditamos que a comunicação medíocre custa caro. Em um mundo saturado de informações, apenas as marcas que ousam ser extraordinárias conseguem espaço na mente do consumidor.
+                  A Voxx Comunicação 360 é especializada em soluções estratégicas para empresas que buscam crescer e se conectar com seu público de forma eficaz. Unimos <strong>design, marketing e tecnologia</strong> para gerar resultados reais.
                 </p>
                 <p className="hidden md:block">
-                  A Voxx nasceu para ser o ponto de virada para empresas que decidiram deixar de ser apenas mais uma opção e passar a ser a <strong>única escolha lógica</strong>.
+                  Trabalhamos com empresas de diversos segmentos, sempre com método, transparência e foco total em atingir os objetivos dos nossos clientes.
                 </p>
               </motion.div>
             </motion.div>
@@ -62,8 +62,8 @@ export default function Sobre() {
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
                 className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl border border-navy/5 max-w-[240px]"
               >
-                <Star className="text-orange mb-4" fill="currentColor" size={32} />
-                <p className="font-display font-bold text-navy text-xl leading-tight">Agência Premium do Ano</p>
+                <Star className="text-orange mb-4" weight="fill" size={32} />
+                <p className="font-display font-bold text-navy text-xl leading-tight">Inteligência em Comunicação</p>
               </motion.div>
             </motion.div>
           </div>
@@ -75,22 +75,22 @@ export default function Sobre() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay" />
         
         <div className="voxx-container relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mb-24 md:w-1/2">
-            <h2 className="font-display font-black leading-tight text-navy mb-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
-              Nossa <span className="text-orange italic">evolução</span> não para.
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mb-12 md:mb-24 md:w-1/2">
+            <h2 className="font-display font-normal leading-tight text-navy mb-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+              Nossa <span className="text-orange italic accent-line">evolução</span> não para.
             </h2>
             <p className="font-body text-muted text-lg">Uma jornada de obsessão por resultados e inovação criativa.</p>
           </motion.div>
 
-          <div className="space-y-24 relative">
+          <div className="space-y-14 md:space-y-24 relative">
             {/* Linha conectora */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-navy/10 -translate-x-1/2" />
 
             {[
-              { year: '2016', title: 'O Início', desc: 'Fundação da Voxx como um estúdio de design focado em identidade visual de alto padrão.', align: 'md:text-right md:pr-16 md:mr-auto' },
-              { year: '2019', title: 'A Virada Digital', desc: 'Integração de serviços de performance e desenvolvimento web, formando o modelo 360º de sucesso.', align: 'md:text-left md:pl-16 md:ml-auto' },
-              { year: '2023', title: 'Expansão Nacional', desc: 'Operação atendendo os maiores players do mercado nacional, consolidando nosso método único de trabalho.', align: 'md:text-right md:pr-16 md:mr-auto' },
-              { year: 'Hoje', title: 'O Futuro', desc: 'Sempre buscando a próxima fronteira tecnológica e criativa para colocar nossos clientes em vantagem.', align: 'md:text-left md:pl-16 md:ml-auto' },
+              { year: '2019', title: 'O Início', desc: 'Fundação da Voxx Comunicação 360 em Itapetininga, SP, com foco em identidade visual e gestão de redes sociais.', align: 'md:text-right md:pr-16 md:mr-auto' },
+              { year: '2021', title: 'Comunicação 360°', desc: 'Expansão dos serviços para tráfego pago, produção de conteúdo e assessoria de imprensa, formando o modelo completo.', align: 'md:text-left md:pl-16 md:ml-auto' },
+              { year: '2023', title: 'Crescimento Regional', desc: 'Consolidação como referência em marketing digital na região, atendendo marcas de diversos segmentos com resultados mensuráveis.', align: 'md:text-right md:pr-16 md:mr-auto' },
+              { year: 'Hoje', title: 'Parceiros de Crescimento', desc: 'Método próprio, equipe especializada e foco total em fazer cada marca crescer de forma consistente e estratégica.', align: 'md:text-left md:pl-16 md:ml-auto' },
             ].map((item, i) => (
               <motion.div 
                 key={item.year}
@@ -101,7 +101,7 @@ export default function Sobre() {
                 <div className="absolute left-4 md:left-[unset] md:right-0 top-0 w-8 h-8 rounded-full bg-cream border-4 border-orange -translate-x-1/2 md:translate-x-1/2 z-10" />
                 
                 <span className="font-display font-black text-orange/20 text-5xl md:text-7xl mb-2">{item.year}</span>
-                <h3 className="font-display font-bold text-navy text-2xl md:text-3xl mb-4">{item.title}</h3>
+                <h3 className="font-display font-normal text-navy text-2xl md:text-3xl mb-4">{item.title}</h3>
                 <p className="font-body text-muted text-lg leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -151,7 +151,7 @@ export default function Sobre() {
         <div className="voxx-container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-20">
              <SectionLabel>DNA da Agência</SectionLabel>
-            <h2 className="font-display font-black text-navy leading-tight mt-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+            <h2 className="font-display font-normal text-navy leading-tight mt-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
               Os pilares que <br/> sustentam nosso <span className="text-orange italic">trabalho.</span>
             </h2>
           </motion.div>
@@ -171,7 +171,7 @@ export default function Sobre() {
                 <div className="w-12 h-12 bg-orange/10 text-orange rounded-xl flex items-center justify-center mb-6 font-display font-bold text-xl">
                   {i + 1}
                 </div>
-                <h3 className="font-display font-bold text-navy text-2xl mb-4">{v.title}</h3>
+                <h3 className="font-display font-normal text-navy text-2xl mb-4">{v.title}</h3>
                 <p className="font-body text-muted leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}

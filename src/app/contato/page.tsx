@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { PaperPlaneTilt, CheckCircle, WarningCircle, CircleNotch } from '@phosphor-icons/react'
 import { sendContactEmail, type FormState } from './actions'
 
 const fadeInUp = {
@@ -46,7 +46,7 @@ export default function Contato() {
   }
 
   return (
-    <main className="relative overflow-x-hidden bg-navy selection:bg-orange/20 selection:text-white min-h-screen">
+    <main className="relative overflow-x-hidden bg-navy selection:bg-orange/20 selection:text-white min-h-screen section-grid">
       <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-10 mix-blend-overlay pointer-events-none" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange/3 rounded-full blur-[120px] pointer-events-none" />
@@ -63,14 +63,14 @@ export default function Contato() {
           >
             <motion.h1
               variants={fadeInUp}
-              className="font-display font-black text-white leading-[1.05] mb-4"
+              className="font-display font-normal text-white leading-[1.05] mb-4"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
             >
-              Vamos construir<br />
-              algo <span className="text-orange italic">extraordinário.</span>
+              Vamos fazer sua marca<br />
+              <span className="text-orange italic accent-line">crescer.</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="font-body text-cream/60 text-lg leading-relaxed">
-              Preencha o formulário e nossa equipe retorna em até 24h úteis.
+              Preencha o formulário e nossa equipe entra em contato em até 24h úteis.
             </motion.p>
           </motion.div>
 
@@ -126,8 +126,8 @@ export default function Contato() {
                       }`}
                     >
                       {state.status === 'success'
-                        ? <CheckCircle2 size={18} className="flex-shrink-0 mt-0.5" />
-                        : <AlertCircle  size={18} className="flex-shrink-0 mt-0.5" />
+                        ? <CheckCircle size={18} weight="bold" className="flex-shrink-0 mt-0.5" />
+                        : <WarningCircle size={18} weight="bold" className="flex-shrink-0 mt-0.5" />
                       }
                       {state.message}
                     </motion.div>
@@ -141,9 +141,9 @@ export default function Contato() {
                   className="group w-full py-4 rounded-xl bg-orange text-white font-body font-bold text-sm uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-orange/90 active:scale-[0.98] transition-all duration-200 shadow-lg shadow-orange/20 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {loading ? (
-                    <><Loader2 size={18} className="animate-spin" />Enviando...</>
+                    <><CircleNotch size={18} weight="bold" className="animate-spin" />Enviando...</>
                   ) : (
-                    <>Enviar Mensagem<Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" /></>
+                    <>Enviar Mensagem<PaperPlaneTilt size={16} weight="bold" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" /></>
                   )}
                 </button>
 

@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Sparkles, Globe, Share2, TrendingUp, PenLine, Target, ArrowRight, CheckCircle } from 'lucide-react'
+import { Sparkle, ShareNetwork, TrendUp, Camera, CalendarCheck, Newspaper, ArrowRight, CheckCircle } from '@phosphor-icons/react'
 import SectionLabel from '@/components/SectionLabel'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -13,35 +13,47 @@ const fadeInUp = {
 
 const services = [
   {
-    icon: <Sparkles size={32} strokeWidth={1.5} />,
-    title: 'Branding & Identidade',
-    desc: 'Construção de marcas magnéticas. Da estratégia de posicionamento ao design system completo que fará sua empresa se destacar imediatamente.',
-    features: ['Naming & Estratégia', 'Design System Visual', 'Voz da Marca', 'Manual de Identidade']
+    icon: <ShareNetwork size={32} weight="bold" />,
+    title: 'Gestão de Redes Sociais',
+    desc: 'Planejamento e execução completa da sua presença digital. Conteúdo relevante, calendário editorial e gestão profissional para aumentar engajamento e conversões.',
+    features: ['Calendário Editorial Mensal', 'Copy Estratégica para Posts', 'Gestão de Comunidade', 'Relatórios de Desempenho']
   },
   {
-    icon: <Globe size={32} strokeWidth={1.5} />,
-    title: 'Digital Experience',
-    desc: 'Sites e aplicações web que unem estética impecável à altíssima conversão. Arquitetura voltada para performance e SEO.',
-    features: ['Design UI/UX Imersivo', 'Desenvolvimento Front-end', 'Sistemas Headless', 'Otimização Core Web Vitals']
+    icon: <Sparkle size={32} weight="bold" />,
+    title: 'Identidade Visual & Design',
+    desc: <>Criamos ou renovamos a identidade da sua marca com design único e impactante que <strong>fortalece o posicionamento</strong> e gera reconhecimento imediato.</>,
+    features: ['Naming & Posicionamento', 'Design System Visual', 'Voz e Tom da Marca', 'Manual de Identidade']
   },
   {
-    icon: <TrendingUp size={32} strokeWidth={1.5} />,
-    title: 'Performance Avançada',
-    desc: 'Gestão de tráfego escalável. Não compramos cliques, compramos clientes qualificados utilizando inteligência de dados.',
-    features: ['Google & Meta Ads', 'Trackeamento Avançado', 'CRO e Testes A/B', 'Dashboards em Tempo Real']
+    icon: <Camera size={32} weight="bold" />,
+    title: 'Produção de Fotos e Vídeos',
+    desc: 'Conteúdo visual de qualidade profissional para alimentar suas redes sociais, campanhas digitais e comunicação institucional.',
+    features: ['Direcionamento de Conteúdo', 'Produção Fotográfica', 'Produção de Vídeos', 'Edição e Finalização']
   },
   {
-    icon: <Share2 size={32} strokeWidth={1.5} />,
-    title: 'Estratégia Social',
-    desc: 'Transformamos seguidores em comunidade e comunidade em compradores através de conteúdo altamente engajador.',
-    features: ['Planejamento de Conteúdo', 'Produção Audiovisual', 'Gestão de Comunidade', 'Estratégia de Influência']
+    icon: <CalendarCheck size={32} weight="bold" />,
+    title: 'Planejamento Estratégico de Conteúdo',
+    desc: <>Definição de público, posicionamento e estratégia de conteúdo baseada em dados para <strong>gerar autoridade e vendas</strong> de forma consistente.</>,
+    features: ['Análise de Público-Alvo', 'Definição de Posicionamento', 'Estratégia por Canal', 'Organização no Trello']
+  },
+  {
+    icon: <TrendUp size={32} weight="bold" />,
+    title: 'Tráfego Pago & Métricas',
+    desc: <>Campanhas no Google, Meta e outras plataformas focadas em <strong>clientes qualificados</strong>, com relatórios completos de alcance, engajamento e retorno.</>,
+    features: ['Google & Meta Ads', 'Rastreamento Avançado', 'CRO e Testes A/B', 'Dashboards em Tempo Real']
+  },
+  {
+    icon: <Newspaper size={32} weight="bold" />,
+    title: 'Assessoria de Imprensa',
+    desc: 'Comunicação institucional, relacionamento com veículos de mídia e influenciadores para ampliar o alcance e a autoridade da sua marca.',
+    features: ['Releases e Pautas', 'Relacionamento com Mídia', 'Comunicação Institucional', 'Estratégia com Influenciadores']
   }
 ]
 
 export default function Servicos() {
   return (
     <main className="overflow-x-hidden bg-cream selection:bg-orange/20 selection:text-navy">
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-navy min-h-[60vh] flex items-center">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-navy min-h-[60vh] flex items-center section-grid">
         <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-20 mix-blend-overlay" />
         
         {/* Floating Decorative Element */}
@@ -51,15 +63,15 @@ export default function Servicos() {
         <div className="voxx-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="lg:col-span-8">
-              <h1 className="font-display font-black text-white mb-8 leading-[1.05] flex flex-wrap items-center gap-x-6" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.8rem)' }}>
-                <span>Engenharia criativa para</span>
+              <h1 className="font-display font-normal text-white mb-8 leading-[1.05] flex flex-wrap items-center gap-x-6" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.8rem)' }}>
+                <span>Soluções completas para</span>
                 <span className="flex items-center gap-6">
-                  <span className="text-orange italic">crescimento acelerado.</span>
-                  <Sparkles className="text-orange w-8 h-8 md:w-12 md:h-12 animate-pulse" strokeWidth={1.5} />
+                  <span className="text-orange italic accent-line">crescimento real.</span>
+                  <Sparkle className="text-orange w-8 h-8 md:w-12 md:h-12 animate-pulse" weight="bold" />
                 </span>
               </h1>
               <p className="font-body text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Esqueça o básico. Nós projetamos ecossistemas de comunicação completos que dominam a atenção e geram resultados impossíveis de ignorar.
+                Da gestão de redes sociais ao tráfego pago, do design à assessoria de imprensa. Tudo integrado para fortalecer sua marca e gerar crescimento consistente.
               </p>
             </motion.div>
             
@@ -83,26 +95,26 @@ export default function Servicos() {
 
       <section className="py-24 bg-cream -mt-10 relative z-20">
         <div className="voxx-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <motion.div 
                 key={s.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -12, scale: 1.01 }}
-                className="group relative bg-white rounded-[2rem] p-10 md:p-14 overflow-hidden shadow-[0_10px_40px_rgba(0,63,92,0.03)] border border-navy/5 hover:border-orange/30 transition-colors duration-500"
+                className="group relative bg-white rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-[0_10px_40px_rgba(0,63,92,0.03)] border border-navy/5 hover:border-orange/30 transition-colors duration-500"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-bl-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-navy text-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-orange transition-colors duration-500 shadow-xl">
                     {s.icon}
                   </div>
-                  <h2 className="font-display font-bold text-3xl text-navy mb-4">{s.title}</h2>
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-navy mb-4">{s.title}</h3>
                   <p className="font-body text-muted text-lg leading-relaxed mb-8">{s.desc}</p>
                   
                   <div className="pt-8 border-t border-navy/10 space-y-4">
                     {s.features.map(f => (
                       <div key={f} className="flex items-center gap-3">
-                        <CheckCircle size={18} className="text-orange" />
+                        <CheckCircle size={18} weight="bold" className="text-orange" />
                         <span className="font-body text-dark font-medium">{f}</span>
                       </div>
                     ))}
@@ -120,11 +132,11 @@ export default function Servicos() {
            <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="md:col-span-5">
                 <SectionLabel>O Diferencial</SectionLabel>
-                <h2 className="font-display font-black text-navy text-4xl leading-tight mt-6 mb-8">
-                   Design é importante, mas <span className="text-orange italic">conversão</span> é vital.
+                <h2 className="font-display font-normal text-navy text-4xl leading-tight mt-6 mb-8">
+                  Método, organização e <span className="text-orange italic">resultado.</span>
                 </h2>
                 <p className="font-body text-muted text-lg leading-relaxed mb-8">
-                   Nossa abordagem não separa a criação da performance. Acreditamos que a beleza visual só atinge seu ápice quando suportada por uma arquitetura de funil inteligente.
+                  Cada cliente recebe um plano personalizado de crescimento digital — com calendário editorial, relatórios de desempenho e gestão completa dos canais.
                 </p>
                 <Link href="/projetos" className="inline-flex items-center gap-2 font-body font-bold text-orange hover:gap-4 transition-all uppercase tracking-widest text-sm">
                    Explore os Resultados <ArrowRight size={18} />
@@ -146,12 +158,13 @@ export default function Servicos() {
       </section>
 
       {/* ─── Processo de Trabalho (Stepped Flow) ─────────────────────────────── */}
-      <section className="py-32 bg-navy relative text-white">
+      <section className="py-32 bg-navy relative text-white section-grid overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-10 mix-blend-overlay" />
         <div className="voxx-container relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-24">
             <SectionLabel>Metodologia Voxx</SectionLabel>
-            <h2 className="font-display font-black text-white mt-6 leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
-              Como garantimos a <span className="text-orange italic">excelência.</span>
+            <h2 className="font-display font-normal text-white mt-6 leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+              Como garantimos a <span className="text-orange italic accent-line">excelência.</span>
             </h2>
           </motion.div>
           

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Sparkles, Globe, Share2, BarChart2, Users2, CheckCircle2, ChevronRight } from 'lucide-react'
+import { ArrowRight, Sparkle, Globe, ShareNetwork, ChartBar, Users, CheckCircle, CaretRight } from '@phosphor-icons/react'
 import SectionLabel from '@/components/SectionLabel'
 import MetricCounter from '@/components/MetricCounter'
 import SectionCTA from '@/components/SectionCTA'
@@ -56,12 +56,12 @@ export default function Home() {
           <div className="max-w-4xl">
             <motion.h1 
               initial="hidden" animate="visible" variants={staggerContainer}
-              className="font-display font-black text-white leading-[1.05] tracking-tight mb-8"
+              className="font-display font-normal text-white leading-[1.05] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 6vw, 5rem)' }}
             >
-              <motion.span variants={fadeInUp} className="block">Elevamos sua marca</motion.span>
+              <motion.span variants={fadeInUp} className="block">Somos parceiros</motion.span>
               <motion.span variants={fadeInUp} className="block">
-                ao próximo <span className="text-orange">nível.</span>
+                de <span className="text-orange accent-line">crescimento.</span>
               </motion.span>
             </motion.h1>
 
@@ -69,50 +69,50 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-cream/80 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
             >
-              Estratégia, criatividade e tecnologia integradas para gerar resultados inquestionáveis em um cenário digital hipercompetitivo.
+              Agência 360° especializada em comunicação estratégica. Unimos design, marketing e tecnologia para gerar <strong>crescimento real e mensurável</strong> para a sua marca.
             </motion.p>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-center gap-4"
             >
-              <Link href="/contato" className="w-full sm:w-auto">
+              <a href="https://wa.me/5515997273323" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <AlgoliaBlueButton className="w-full sm:w-auto h-14 px-8 text-base rounded-full font-body font-bold">
-                  Iniciar Projeto
+                  Solicitar Orçamento
                 </AlgoliaBlueButton>
-              </Link>
+              </a>
               <Link href="/projetos" className="w-full sm:w-auto inline-flex items-center justify-center h-14 px-8 rounded-full border border-white/20 text-white font-body font-bold text-base backdrop-blur-sm hover:bg-white hover:text-navy transition-all duration-300">
-                Nosso Portfólio
+                Ver Portfólio
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-32 bg-cream relative">
+      <section className="py-20 bg-cream relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
-        
+
         <div className="voxx-container relative z-10">
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-            className="max-w-3xl mb-20"
+            className="max-w-3xl mb-12"
           >
             <div className="flex items-center gap-4 mb-6">
                <span className="w-12 h-[2px] bg-orange" />
                <h3 className="font-body text-orange uppercase tracking-[0.2em] text-sm font-bold">Por que a Voxx</h3>
             </div>
-            <h2 className="font-display font-black text-navy leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
-              Nós não criamos apenas design. <br/>
-              <span className="text-muted/50">Nós construímos</span> <span className="italic">autoridade</span>.
+            <h2 className="font-display font-normal text-navy leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+              Empresas de sucesso não apostam na sorte. <br className="hidden sm:block" />
+              <span className="text-muted/50">Elas investem em</span> <span className="italic">marketing profissional.</span>
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {[
-              { num: '01', title: 'Data-Driven Strategy', desc: 'Não operamos no escuro. Mapeamos jornadas e utilizamos dados para decisões de alto impacto que maximizam o seu ROI.', col: 'md:col-span-5' },
-              { num: '02', title: 'Design Imersivo', desc: 'Direção de arte com padrão internacional. Criamos experiências visuais que fixam sua marca na memória do consumidor.', col: 'md:col-span-7' },
-              { num: '03', title: 'Tecnologia Escalável', desc: 'Aplicações web extremamente rápidas, otimizadas para SEO e prontas para absorver o crescimento do seu negócio.', col: 'md:col-span-6' },
-              { num: '04', title: 'Resultados Mensuráveis', desc: 'Transparência total. Você acompanha cada etapa, KPI e conversão gerada pelas nossas campanhas.', col: 'md:col-span-6' },
+              { num: '01', title: 'Estratégia 360°', desc: <>Planejamento completo: do posicionamento de marca ao calendário editorial, com <strong>método e dados</strong> orientando cada decisão.</>, col: 'md:col-span-5' },
+              { num: '02', title: 'Identidade Visual', desc: 'Criamos ou renovamos a identidade da sua marca com design único que fortalece o posicionamento e gera reconhecimento imediato.', col: 'md:col-span-7' },
+              { num: '03', title: 'Tráfego e Conversão', desc: <>Gestão de tráfego pago focada em <strong>clientes qualificados</strong>, com relatórios completos de alcance, engajamento e retorno.</>, col: 'md:col-span-6' },
+              { num: '04', title: 'Resultados Reais', desc: 'Transparência total. Você acompanha cada entrega, métrica e conversão gerada pelas nossas ações.', col: 'md:col-span-6' },
             ].map((item, i) => (
               <motion.div 
                 key={item.num}
@@ -123,7 +123,7 @@ export default function Home() {
                   {item.num}
                 </div>
                 <div className="relative z-10">
-                  <h3 className="font-display font-bold text-navy text-2xl md:text-3xl mb-4 group-hover:text-orange transition-colors">{item.title}</h3>
+                  <h3 className="font-display font-normal text-navy text-2xl md:text-3xl mb-4 group-hover:text-orange transition-colors">{item.title}</h3>
                   <p className="font-body text-muted text-lg leading-relaxed max-w-sm">{item.desc}</p>
                 </div>
               </motion.div>
@@ -133,16 +133,16 @@ export default function Home() {
       </section>
 
       {/* ─── O Que Fazemos (Services Showcase) ──────────────────────────── */}
-      <section className="py-32 bg-navy relative text-white">
+      <section className="py-20 bg-navy relative text-white section-grid">
         <div className="voxx-container relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-2xl">
               <div className="flex items-center gap-4 mb-6">
                  <span className="w-12 h-[2px] bg-orange" />
                  <h3 className="font-body text-orange uppercase tracking-[0.2em] text-sm font-bold">Nossa Expertise</h3>
               </div>
-              <h2 className="font-display font-black text-white leading-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
-                Soluções que <span className="text-orange italic">transformam</span> <br/> e impulsionam o seu negócio.
+              <h2 className="font-display font-normal text-white leading-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+                Tudo integrado para <span className="text-orange italic accent-line">fortalecer</span> <br className="hidden md:block" /> sua marca e gerar crescimento.
               </h2>
               <Link href="/servicos" className="inline-flex items-center gap-2 font-body text-white hover:text-orange transition-colors border-b border-orange/30 hover:border-orange pb-1">
                 Explorar todos os serviços <ArrowRight size={16} />
@@ -152,37 +152,48 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: <Sparkles size={32} strokeWidth={1.5} />, title: 'Branding & Design', desc: 'Identidade visual de alto padrão que comunica valor e diferencia sua empresa dos concorrentes no primeiro olhar.' },
-              { icon: <Globe size={32} strokeWidth={1.5} />, title: 'Web Experience', desc: 'Desenvolvimento de sites e portais ultrarrápidos, imersivos e desenhados especificamente para converter visitantes em clientes.' },
-              { icon: <BarChart2 size={32} strokeWidth={1.5} />, title: 'Performance Digital', desc: 'Tráfego pago avançado, SEO e estratégias data-driven focadas agressivamente no aumento da sua receita.' },
+              { icon: <ShareNetwork size={32} weight="bold" />, title: 'Gestão de Redes Sociais', desc: 'Planejamento estratégico, conteúdo relevante e gestão profissional para aumentar engajamento, alcance e conversões.', bg: 'bg-[var(--cream)]', text: 'text-dark' },
+              { icon: <Sparkle size={32} weight="bold" />, title: 'Identidade Visual & Branding', desc: 'Criamos ou renovamos a identidade da sua marca com design único e impactante que fortalece o posicionamento no mercado.', bg: 'bg-white', text: 'text-dark' },
+              { icon: <ChartBar size={32} weight="bold" />, title: 'Tráfego Pago & Métricas', desc: 'Campanhas online focadas em clientes qualificados, com análise constante e relatórios de desempenho para maximizar o retorno.', bg: 'bg-[#FFF5EC]', text: 'text-dark' },
             ].map((s, i) => (
-              <motion.div 
+              <motion.div
                 key={s.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.15 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="group p-10 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 transition-colors duration-300 hover:bg-white/10"
+                className={`group p-10 ${s.bg} rounded-[20px] border border-transparent transition-all duration-300 flex flex-col`}
               >
                 <div className="w-16 h-16 rounded-2xl bg-orange/20 text-orange flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-orange group-hover:text-white transition-all duration-300">
                   {s.icon}
                 </div>
-                <h3 className="font-display font-bold text-2xl mb-4">{s.title}</h3>
-                <p className="font-body text-cream/70 leading-relaxed">{s.desc}</p>
+                <h3 className={`font-display font-bold text-2xl mb-4 ${s.text}`}>{s.title}</h3>
+                <p className={`font-body leading-relaxed flex-1 ${s.text} opacity-70`}>{s.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Projetos em Destaque ─────────────────────────────────── */}
-      <section className="py-32 bg-cream">
+      {/* ─── Editorial Callout ───────────────────────────────────── */}
+      <div className="bg-cream py-10">
         <div className="voxx-container">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-20">
+          <div className="dashed-frame border-navy/25 text-navy max-w-2xl mx-auto text-center">
+            <p className="font-display font-normal text-2xl leading-snug">
+              Aqui, tudo é pensado para um único objetivo: fazer sua marca <span className="text-orange italic">crescer de verdade.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ─── Projetos em Destaque ─────────────────────────────────── */}
+      <section className="py-20 bg-cream">
+        <div className="voxx-container">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-10">
              <div className="flex items-center justify-center gap-4 mb-6">
                  <span className="w-8 h-[2px] bg-orange" />
                  <h3 className="font-body text-orange uppercase tracking-[0.2em] text-sm font-bold">Showcase</h3>
                  <span className="w-8 h-[2px] bg-orange" />
               </div>
-            <h2 className="font-display font-black text-navy leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
+            <h2 className="font-display font-normal text-navy leading-tight" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
               Trabalhos que falam <br/> <span className="text-orange italic">por si mesmos.</span>
             </h2>
           </motion.div>
@@ -207,7 +218,7 @@ export default function Home() {
                     <span className="inline-block px-4 py-1.5 bg-orange text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4">
                       {p.cat}
                     </span>
-                    <h3 className="font-display font-bold text-white text-3xl md:text-4xl mb-2">{p.title}</h3>
+                    <h3 className="font-display font-normal text-white text-3xl md:text-4xl mb-2">{p.title}</h3>
                     <div className="flex items-center gap-2 text-white/80 font-body md:opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                       Ver Estudo de Caso <ArrowRight size={16} />
                     </div>
@@ -222,7 +233,7 @@ export default function Home() {
       {/* ─── Métricas Animadas ─────────────────────────────────────────── */}
       <section className="py-24 bg-cream border-y border-navy/5">
         <div className="voxx-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center divide-x divide-navy/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center md:divide-x md:divide-navy/5">
             {[
               { num: 47, suf: '+', lbl: 'Projetos de Alto Impacto' },
               { num: 8, suf: ' Anos', lbl: 'De Excelência Criativa' },
