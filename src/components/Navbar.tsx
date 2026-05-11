@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { List, X } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -62,11 +62,11 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
-              {menuOpen ? <X size={32} strokeWidth={1.5} /> : <Menu size={32} strokeWidth={1.5} />}
+              {menuOpen ? <X size={32} weight="bold" /> : <List size={32} weight="bold" />}
             </button>
 
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5515997273323"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange text-white text-xs font-body font-bold hover:bg-orange/90 transition-all hover:scale-105 shadow-lg shadow-orange/20 tracking-wider"
@@ -121,7 +121,7 @@ export default function Navbar() {
                 className="mt-8 sm:hidden w-full max-w-xs"
               >
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5515997273323"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-orange text-white text-sm font-body font-bold shadow-lg tracking-wider"
