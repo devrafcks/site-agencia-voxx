@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Voxx | Agência de Comunicação",
+  title: "Agência Voxx",
   description: "Estratégia, criatividade e tecnologia integradas para gerar resultados reais para o seu negócio.",
 };
 
