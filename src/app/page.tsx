@@ -201,12 +201,12 @@ export default function Home() {
                 <Image src={`https://images.unsplash.com/photo-${p.img}?w=1200&q=80&auto=format&fit=crop`} alt={p.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                 <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <span className="inline-block px-4 py-1.5 bg-orange text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4">
                       {p.cat}
                     </span>
                     <h3 className="font-display font-bold text-white text-3xl md:text-4xl mb-2">{p.title}</h3>
-                    <div className="flex items-center gap-2 text-white/80 font-body opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    <div className="flex items-center gap-2 text-white/80 font-body md:opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                       Ver Estudo de Caso <ArrowRight size={16} />
                     </div>
                   </div>
