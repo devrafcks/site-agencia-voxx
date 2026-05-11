@@ -43,10 +43,12 @@ export default function Home() {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/12902-242487547.mp4" type="video/mp4" />
           </video>
+
           <div className="absolute inset-0 bg-linear-to-t from-navy via-navy/70 to-transparent" />
         </motion.div>
 
