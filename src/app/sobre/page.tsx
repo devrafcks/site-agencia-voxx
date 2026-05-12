@@ -161,7 +161,7 @@ export default function Sobre() {
               { title: 'Inovação Inquieta', desc: 'O que converte hoje pode não converter amanhã. Por isso vivemos em modo beta: testando, aprendendo e ajustando antes do mercado exigir.' },
               { title: 'Estética com Propósito', desc: 'Design bonito que não vende é decoração. Na Voxx, cada escolha visual é estratégica, feita para gerar desejo, engajamento e conversão.' },
               { title: 'Transparência Brutal', desc: 'Números não mentem, e nós também não. Você recebe o cenário real, as métricas sem filtro e um plano claro sobre o que vem a seguir.' },
-              { title: 'Parceria Verdadeira', desc: 'Fornecedor entrega tarefa. Parceiro resolve problema. Nós entramos no seu negócio, entendemos seus objetivos e trabalhamos como se o crescimento da sua empresa fosse também o nosso — porque é.' },
+              { title: 'Parceria Verdadeira', desc: 'Fornecedor entrega tarefa. Parceiro resolve problema. Nós entramos no seu negócio, entendemos seus objetivos e trabalhamos como se o crescimento da sua empresa fosse também o nosso, porque é.' },
             ].map((v, i) => (
               <motion.div 
                 key={v.title}
