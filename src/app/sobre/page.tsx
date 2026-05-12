@@ -37,7 +37,7 @@ export default function Sobre() {
               </motion.h1>
               <motion.div variants={fadeInUp} className="font-body text-cream/70 text-base lg:text-xl leading-relaxed space-y-6 max-w-2xl border-l-4 border-orange/30 pl-6">
                 <p>
-                  A Voxx é especializada em estratégias de marketing digital para empresas que querem crescer, vender mais e se conectar de verdade com o seu público. Integramos <strong>design, marketing e tecnologia</strong> em uma solução completa — do planejamento à execução.
+                  A Voxx é especializada em estratégias de marketing digital para empresas que querem crescer, vender mais e se conectar de verdade com o seu público. Integramos <strong>design, marketing e tecnologia</strong> em uma solução completa, do planejamento à execução.
                 </p>
                 <p className="hidden md:block">
                   Atendemos empresas de diferentes segmentos com método, transparência e foco total nos seus resultados. Aqui, cada ação tem propósito e cada entrega é mensurável.
@@ -159,7 +159,7 @@ export default function Sobre() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               { title: 'Inovação Inquieta', desc: 'O que converte hoje pode não converter amanhã. Por isso vivemos em modo beta: testando, aprendendo e ajustando antes do mercado exigir.' },
-              { title: 'Estética com Propósito', desc: 'Design bonito que não vende é decoração. Na Voxx, cada escolha visual é estratégica — feita para gerar desejo, engajamento e conversão.' },
+              { title: 'Estética com Propósito', desc: 'Design bonito que não vende é decoração. Na Voxx, cada escolha visual é estratégica, feita para gerar desejo, engajamento e conversão.' },
               { title: 'Transparência Brutal', desc: 'Números não mentem, e nós também não. Você recebe o cenário real, as métricas sem filtro e um plano claro sobre o que vem a seguir.' },
               { title: 'Parceria Verdadeira', desc: 'Fornecedor entrega tarefa. Parceiro resolve problema. Nós entramos no seu negócio, entendemos seus objetivos e trabalhamos como se o crescimento da sua empresa fosse também o nosso — porque é.' },
             ].map((v, i) => (
