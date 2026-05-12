@@ -8,6 +8,7 @@ import SectionLabel from '@/components/SectionLabel'
 import MetricCounter from '@/components/MetricCounter'
 import SectionCTA from '@/components/SectionCTA'
 import { useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import AlgoliaBlueButton from '@/components/animata/button/algolia-blue-button'
 
 const clientLogos = ['Empresa Alpha', 'Conecta', 'BrandMax', 'Inova Corp', 'TechSul', 'Grupo Nexus']
@@ -26,6 +27,7 @@ const staggerContainer = {
 }
 
 export default function Home() {
+  const router = useRouter()
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] })
   const y = useTransform(scrollYProgress, [0, 1], [0, 300])
@@ -210,6 +212,7 @@ export default function Home() {
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 0.98 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push('/projetos')}
                 className={`group relative overflow-hidden rounded-[2rem] cursor-pointer ${p.span}`}
               >
                 <Image src={`https://images.unsplash.com/photo-${p.img}?w=1200&q=80&auto=format&fit=crop`} alt={p.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -221,7 +224,7 @@ export default function Home() {
                     </span>
                     <h3 className="font-display font-normal text-white text-3xl md:text-4xl mb-2">{p.title}</h3>
                     <div className="flex items-center gap-2 text-white/80 font-body md:opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                      Ver Estudo de Caso <ArrowRight size={16} />
+                      Ver Projeto <ArrowRight size={16} />
                     </div>
                   </div>
                 </div>
