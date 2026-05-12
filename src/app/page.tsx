@@ -57,7 +57,7 @@ export default function Home() {
             <motion.h1 
               initial="hidden" animate="visible" variants={staggerContainer}
               className="font-display font-normal text-white leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(2.2rem, 6vw, 5rem)' }}
+              style={{ fontSize: 'clamp(2.8rem, 7vw, 6.5rem)' }}
             >
               <motion.span variants={fadeInUp} className="block">Somos parceiros</motion.span>
               <motion.span variants={fadeInUp} className="block">
