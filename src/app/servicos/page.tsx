@@ -45,7 +45,7 @@ const services = [
   {
     icon: <Newspaper size={32} weight="bold" />,
     title: 'Assessoria de Imprensa',
-    desc: 'Visibilidade conquistada, não comprada. Posicionamos sua marca e seus porta-vozes nos veículos certos — portais, revistas, podcasts e influenciadores do seu segmento.',
+    desc: 'Visibilidade conquistada, não comprada. Posicionamos sua marca e seus porta-vozes nos veículos certos: portais, revistas, podcasts e influenciadores do seu segmento.',
     features: ['Releases e Pautas', 'Relacionamento com Mídia', 'Comunicação Institucional', 'Estratégia com Influenciadores']
   }
 ]
@@ -71,7 +71,7 @@ export default function Servicos() {
                 </span>
               </h1>
               <p className="font-body text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual — tudo integrado, com dados orientando cada decisão.
+                Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual. Tudo integrado, com dados orientando cada decisão.
               </p>
             </motion.div>
             
@@ -136,7 +136,7 @@ export default function Servicos() {
                   Método, organização e <span className="text-orange italic">resultado.</span>
                 </h2>
                 <p className="font-body text-muted text-lg leading-relaxed mb-8">
-                  Cada cliente recebe um plano personalizado de crescimento digital — com calendário editorial, relatórios de desempenho e gestão completa dos canais.
+                  Cada cliente recebe um plano personalizado de crescimento digital, com calendário editorial, relatórios de desempenho e gestão completa dos canais.
                 </p>
                 <Link href="/projetos" className="inline-flex items-center gap-2 font-body font-bold text-orange hover:gap-4 transition-all uppercase tracking-widest text-sm">
                    Explore os Resultados <ArrowRight size={18} />

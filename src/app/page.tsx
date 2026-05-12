@@ -58,7 +58,7 @@ export default function Home() {
             <motion.h1
               initial="hidden" animate="visible" variants={staggerContainer}
               className="font-display font-normal text-white leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(2.8rem, 7vw, 6.5rem)' }}
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}
             >
               <motion.span variants={fadeInUp} className="block">Agência de Marketing Digital</motion.span>
               <motion.span variants={fadeInUp} className="block">
@@ -70,7 +70,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-cream/80 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
             >
-              Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual — tudo integrado, com dados orientando cada decisão. Do posicionamento da sua marca ao <strong>crescimento real das suas vendas.</strong>
+              Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual. Tudo integrado, com dados orientando cada decisão. Do posicionamento da sua marca ao <strong>crescimento real das suas vendas.</strong>
             </motion.p>
 
             <motion.div 
@@ -110,7 +110,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {[
-              { num: '01', title: 'Estratégia 360°', desc: 'Criamos o plano completo da sua marca: posicionamento, calendário editorial e estratégia de conteúdo com método e dados. Você sabe exatamente o que será feito — e por quê.', col: 'md:col-span-5' },
+              { num: '01', title: 'Estratégia 360°', desc: 'Criamos o plano completo da sua marca: posicionamento, calendário editorial e estratégia de conteúdo com método e dados. Você sabe exatamente o que será feito, e por quê.', col: 'md:col-span-5' },
               { num: '02', title: 'Identidade Visual & Branding', desc: 'Design único e estratégico que posiciona sua marca no mercado e gera reconhecimento imediato. Criamos ou renovamos sua identidade com profundidade, do logo à aplicação completa.', col: 'md:col-span-7' },
               { num: '03', title: 'Tráfego pago & conversão', desc: 'Campanhas focadas em atrair clientes qualificados, não apenas cliques. Gerenciamos Google Ads e Meta Ads com análise constante e relatórios claros de alcance, engajamento e ROI.', col: 'md:col-span-6' },
               { num: '04', title: 'Gestão de redes sociais', desc: 'Planejamento estratégico, conteúdo relevante e publicação consistente para crescer seu engajamento, ampliar seu alcance e transformar seguidores em clientes reais.', col: 'md:col-span-6' },
