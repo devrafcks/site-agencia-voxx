@@ -49,7 +49,8 @@ export default function Home() {
             <source src="/12902-242487547.mp4" type="video/mp4" />
           </video>
 
-          <div className="absolute inset-0 bg-linear-to-t from-navy via-navy/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-navy via-navy/70 to-navy/30" />
+          <div className="absolute inset-0 bg-linear-to-r from-navy/80 via-navy/40 to-transparent" />
         </motion.div>
 
         <div className="voxx-container relative z-10 w-full pt-12 md:pt-0">
