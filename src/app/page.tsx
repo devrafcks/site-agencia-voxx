@@ -55,22 +55,22 @@ export default function Home() {
 
         <div className="voxx-container relative z-10 w-full pt-12 md:pt-0">
           <div className="max-w-4xl">
-            <motion.h1 
+            <motion.h1
               initial="hidden" animate="visible" variants={staggerContainer}
               className="font-display font-normal text-white leading-[1.05] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.8rem, 7vw, 6.5rem)' }}
             >
-              <motion.span variants={fadeInUp} className="block">Somos parceiros</motion.span>
+              <motion.span variants={fadeInUp} className="block">Agência de Marketing Digital</motion.span>
               <motion.span variants={fadeInUp} className="block">
-                de <span className="text-orange accent-line">crescimento.</span>
+                que transforma estratégia em <span className="text-orange accent-line">resultado.</span>
               </motion.span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-cream/80 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
             >
-              Agência 360° especializada em comunicação estratégica. Unimos design, marketing e tecnologia para gerar <strong>crescimento real e mensurável</strong> para a sua marca.
+              Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual — tudo integrado, com dados orientando cada decisão. Do posicionamento da sua marca ao <strong>crescimento real das suas vendas.</strong>
             </motion.p>
 
             <motion.div 
@@ -110,10 +110,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {[
-              { num: '01', title: 'Estratégia 360°', desc: <>Planejamento completo: do posicionamento de marca ao calendário editorial, com <strong>método e dados</strong> orientando cada decisão.</>, col: 'md:col-span-5' },
-              { num: '02', title: 'Identidade Visual', desc: 'Criamos ou renovamos a identidade da sua marca com design único que fortalece o posicionamento e gera reconhecimento imediato.', col: 'md:col-span-7' },
-              { num: '03', title: 'Tráfego e Conversão', desc: <>Gestão de tráfego pago focada em <strong>clientes qualificados</strong>, com relatórios completos de alcance, engajamento e retorno.</>, col: 'md:col-span-6' },
-              { num: '04', title: 'Resultados Reais', desc: 'Transparência total. Você acompanha cada entrega, métrica e conversão gerada pelas nossas ações.', col: 'md:col-span-6' },
+              { num: '01', title: 'Estratégia 360°', desc: 'Criamos o plano completo da sua marca: posicionamento, calendário editorial e estratégia de conteúdo com método e dados. Você sabe exatamente o que será feito — e por quê.', col: 'md:col-span-5' },
+              { num: '02', title: 'Identidade Visual & Branding', desc: 'Design único e estratégico que posiciona sua marca no mercado e gera reconhecimento imediato. Criamos ou renovamos sua identidade com profundidade, do logo à aplicação completa.', col: 'md:col-span-7' },
+              { num: '03', title: 'Tráfego pago & conversão', desc: 'Campanhas focadas em atrair clientes qualificados, não apenas cliques. Gerenciamos Google Ads e Meta Ads com análise constante e relatórios claros de alcance, engajamento e ROI.', col: 'md:col-span-6' },
+              { num: '04', title: 'Gestão de redes sociais', desc: 'Planejamento estratégico, conteúdo relevante e publicação consistente para crescer seu engajamento, ampliar seu alcance e transformar seguidores em clientes reais.', col: 'md:col-span-6' },
             ].map((item, i) => (
               <motion.div 
                 key={item.num}
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="voxx-container">
           <div className="dashed-frame border-navy/25 text-navy max-w-2xl mx-auto text-center">
             <p className="font-display font-normal text-2xl leading-snug">
-              Aqui, tudo é pensado para um único objetivo: fazer sua marca <span className="text-orange italic">crescer de verdade.</span>
+              Marketing não é achismo. Cada ação é planejada com dados, executada com criatividade e entregue com <span className="text-orange italic">transparência total.</span>
             </p>
           </div>
         </div>
@@ -201,9 +201,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
-              { img: '1522202176988-66273c2fd55f', cat: 'Branding Institucional', title: 'Rebranding Consultoria Global', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
-              { img: '1460925895917-afdab827c52f', cat: 'Plataforma Web', title: 'Portal Corporativo B2B', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
-              { img: '1542744173-8e7e53415bb0', cat: 'Campanha Digital', title: 'Lançamento de Produto Tech', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
+              { img: '1522202176988-66273c2fd55f', cat: 'Redes Sociais', title: 'Presença constante, conteúdo estratégico e gestão profissional.', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
+              { img: '1460925895917-afdab827c52f', cat: 'Branding', title: 'Identidades visuais que geram reconhecimento e conexão emocional.', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
+              { img: '1542744173-8e7e53415bb0', cat: 'Assessoria de Imprensa', title: 'Visibilidade conquistada nos veículos certos do seu segmento.', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
             ].map((p, i) => (
               <motion.div 
                 key={p.title}
@@ -234,12 +234,11 @@ export default function Home() {
       {/* ─── Métricas Animadas ─────────────────────────────────────────── */}
       <section className="py-24 bg-cream border-y border-navy/5">
         <div className="voxx-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center md:divide-x md:divide-navy/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-center md:divide-x md:divide-navy/5">
             {[
-              { num: 47, suf: '+', lbl: 'Projetos de Alto Impacto' },
-              { num: 8, suf: ' Anos', lbl: 'De Excelência Criativa' },
-              { num: 120, suf: '+', lbl: 'Marcas Transformadas' },
-              { num: 98, suf: '%', lbl: 'Taxa de Retenção' },
+              { num: 80, suf: '+', lbl: 'Projetos de Alto Impacto' },
+              { num: 7, suf: ' Anos', lbl: 'De Excelência Criativa' },
+              { num: 45, suf: '+', lbl: 'Marcas Transformadas' },
             ].map((m, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1 }} className="flex flex-col items-center justify-center">
                 <MetricCounter target={m.num} suffix={m.suf} label="" />

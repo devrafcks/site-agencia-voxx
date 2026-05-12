@@ -32,15 +32,15 @@ export default function Sobre() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="lg:col-span-7">
               <motion.h1 variants={fadeInUp} className="font-display font-normal text-white leading-[1.1] mb-8" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
-                Agência 360° <br/>
-                <span className="text-orange italic">parceira do seu crescimento.</span>
+                Voxx Comunicação Inteligente 360 <br/>
+                <span className="text-orange italic">Agência do crescimento da sua empresa.</span>
               </motion.h1>
               <motion.div variants={fadeInUp} className="font-body text-cream/70 text-base lg:text-xl leading-relaxed space-y-6 max-w-2xl border-l-4 border-orange/30 pl-6">
                 <p>
-                  A Voxx Comunicação 360 é especializada em soluções estratégicas para empresas que buscam crescer e se conectar com seu público de forma eficaz. Unimos <strong>design, marketing e tecnologia</strong> para gerar resultados reais.
+                  A Voxx é especializada em estratégias de marketing digital para empresas que querem crescer, vender mais e se conectar de verdade com o seu público. Integramos <strong>design, marketing e tecnologia</strong> em uma solução completa — do planejamento à execução.
                 </p>
                 <p className="hidden md:block">
-                  Trabalhamos com empresas de diversos segmentos, sempre com método, transparência e foco total em atingir os objetivos dos nossos clientes.
+                  Atendemos empresas de diferentes segmentos com método, transparência e foco total nos seus resultados. Aqui, cada ação tem propósito e cada entrega é mensurável.
                 </p>
               </motion.div>
             </motion.div>
@@ -150,18 +150,18 @@ export default function Sobre() {
       <section className="py-32 bg-white relative">
         <div className="voxx-container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-20">
-             <SectionLabel>DNA da Agência</SectionLabel>
+             <SectionLabel>DNA da Voxx</SectionLabel>
             <h2 className="font-display font-normal text-navy leading-tight mt-6" style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}>
-              Os pilares que <br/> sustentam nosso <span className="text-orange italic">trabalho.</span>
+              Os pilares que guiam cada estratégia, <br/> cada entrega e cada <span className="text-orange italic">resultado.</span>
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              { title: 'Inovação Inquieta', desc: 'O que funcionou ontem pode não funcionar amanhã. Estamos sempre um passo à frente testando novas abordagens.' },
-              { title: 'Estética com Propósito', desc: 'Design bonito sem conversão é arte. Nós fazemos design para negócios: focado em gerar desejo e vendas.' },
-              { title: 'Transparência Brutal', desc: 'Dados não mentem. Compartilhamos o cenário real, as métricas e os próximos passos sem meias palavras.' },
-              { title: 'Parceria Verdadeira', desc: 'Não somos fornecedores, somos o braço direito do seu crescimento. Seu sucesso é literalmente o nosso negócio.' },
+              { title: 'Inovação Inquieta', desc: 'O que converte hoje pode não converter amanhã. Por isso vivemos em modo beta: testando, aprendendo e ajustando antes do mercado exigir.' },
+              { title: 'Estética com Propósito', desc: 'Design bonito que não vende é decoração. Na Voxx, cada escolha visual é estratégica — feita para gerar desejo, engajamento e conversão.' },
+              { title: 'Transparência Brutal', desc: 'Números não mentem, e nós também não. Você recebe o cenário real, as métricas sem filtro e um plano claro sobre o que vem a seguir.' },
+              { title: 'Parceria Verdadeira', desc: 'Fornecedor entrega tarefa. Parceiro resolve problema. Nós entramos no seu negócio, entendemos seus objetivos e trabalhamos como se o crescimento da sua empresa fosse também o nosso — porque é.' },
             ].map((v, i) => (
               <motion.div 
                 key={v.title}

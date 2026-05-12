@@ -15,13 +15,13 @@ const services = [
   {
     icon: <ShareNetwork size={32} weight="bold" />,
     title: 'Gestão de Redes Sociais',
-    desc: 'Planejamento e execução completa da sua presença digital. Conteúdo relevante, calendário editorial e gestão profissional para aumentar engajamento e conversões.',
+    desc: 'Planejamento estratégico, conteúdo relevante e publicação consistente para crescer seu engajamento, ampliar seu alcance e transformar seguidores em clientes reais.',
     features: ['Calendário Editorial Mensal', 'Copy Estratégica para Posts', 'Gestão de Comunidade', 'Relatórios de Desempenho']
   },
   {
     icon: <Sparkle size={32} weight="bold" />,
-    title: 'Identidade Visual & Design',
-    desc: <>Criamos ou renovamos a identidade da sua marca com design único e impactante que <strong>fortalece o posicionamento</strong> e gera reconhecimento imediato.</>,
+    title: 'Identidade Visual & Branding',
+    desc: 'Design único e estratégico que posiciona sua marca no mercado e gera reconhecimento imediato. Criamos ou renovamos sua identidade com profundidade, do logo à aplicação completa.',
     features: ['Naming & Posicionamento', 'Design System Visual', 'Voz e Tom da Marca', 'Manual de Identidade']
   },
   {
@@ -38,14 +38,14 @@ const services = [
   },
   {
     icon: <TrendUp size={32} weight="bold" />,
-    title: 'Tráfego Pago & Métricas',
-    desc: <>Campanhas no Google, Meta e outras plataformas focadas em <strong>clientes qualificados</strong>, com relatórios completos de alcance, engajamento e retorno.</>,
+    title: 'Tráfego Pago & Conversão',
+    desc: 'Campanhas focadas em atrair clientes qualificados, não apenas cliques. Gerenciamos Google Ads e Meta Ads com análise constante e relatórios claros de alcance, engajamento e ROI.',
     features: ['Google & Meta Ads', 'Rastreamento Avançado', 'CRO e Testes A/B', 'Dashboards em Tempo Real']
   },
   {
     icon: <Newspaper size={32} weight="bold" />,
     title: 'Assessoria de Imprensa',
-    desc: 'Comunicação institucional, relacionamento com veículos de mídia e influenciadores para ampliar o alcance e a autoridade da sua marca.',
+    desc: 'Visibilidade conquistada, não comprada. Posicionamos sua marca e seus porta-vozes nos veículos certos — portais, revistas, podcasts e influenciadores do seu segmento.',
     features: ['Releases e Pautas', 'Relacionamento com Mídia', 'Comunicação Institucional', 'Estratégia com Influenciadores']
   }
 ]
@@ -71,7 +71,7 @@ export default function Servicos() {
                 </span>
               </h1>
               <p className="font-body text-cream/70 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Da gestão de redes sociais ao tráfego pago, do design à assessoria de imprensa. Tudo integrado para fortalecer sua marca e gerar crescimento consistente.
+                Planejamento 360°, gestão de redes sociais, tráfego pago e identidade visual — tudo integrado, com dados orientando cada decisão.
               </p>
             </motion.div>
             
