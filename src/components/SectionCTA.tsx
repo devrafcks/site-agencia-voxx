@@ -22,9 +22,9 @@ export default function SectionCTA({
       <div className="absolute inset-0 bg-[url('/texture.avif')] opacity-10 mix-blend-overlay" />
 
       <div className="voxx-container relative z-10 text-center">
-        <h2 className="font-display font-normal text-white text-3xl md:text-5xl mb-12 max-w-4xl mx-auto leading-tight">
+        <h2 className="font-display font-normal text-white text-4xl md:text-6xl mb-12 max-w-4xl mx-auto leading-tight">
           {parts[0]}
-          {accentWord && <span className="text-orange italic accent-line">{accentWord}</span>}
+          {accentWord && <span className="text-orange italic accent-line" style={{ textUnderlineOffset: '12px' }}>{accentWord}</span>}
           {parts[1]}
         </h2>
         <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 17 }} className="inline-block">
