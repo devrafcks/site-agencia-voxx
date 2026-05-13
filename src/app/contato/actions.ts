@@ -160,7 +160,7 @@ export async function sendContactEmail(
   try {
     const isProd = process.env.NODE_ENV === 'production'
     const fromAddress = isProd
-      ? 'Agência Voxx <noreply@send.agenciavoxx.com.br>'
+      ? 'Agência Voxx <noreply@agenciavoxx.com.br>'
       : 'Agência Voxx <onboarding@resend.dev>'
 
     const { error } = await resend.emails.send({
