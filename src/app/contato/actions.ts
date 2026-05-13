@@ -165,7 +165,7 @@ export async function sendContactEmail(
 
     const { error } = await resend.emails.send({
       from:    fromAddress,
-      to:      ['rafcksps@gmail.com'],
+      to:      ['agenciavoxx.itapetininga@gmail.com'],
       replyTo: email,
       subject: `Nova mensagem de ${name} via site`,
       html:    buildEmailHtml(name, email, message, sentAt),
