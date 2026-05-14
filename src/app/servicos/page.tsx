@@ -144,12 +144,12 @@ export default function Servicos() {
              </motion.div>
              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }} className="md:col-span-7">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                   <Image 
-                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop" 
-                     alt="Dashboard de performance" 
-                     fill 
+                   <Image
+                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop"
+                     alt="Equipe em reunião de estratégia e planejamento"
+                     fill
                      sizes="(max-width: 768px) 100vw, 60vw"
-                     className="object-cover" 
+                     className="object-cover"
                    />
                 </div>
              </motion.div>

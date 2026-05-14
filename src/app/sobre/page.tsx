@@ -47,13 +47,13 @@ export default function Sobre() {
 
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="lg:col-span-5 relative">
               <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden shadow-2xl">
-                <Image 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" 
-                  alt="Equipe liderando reunião estratégica" 
-                  fill 
+                <Image
+                  src="/imagens/producao-video-sincomercio.jpg"
+                  alt="Produção de vídeo para cliente Sincomercio"
+                  fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover" 
-                  priority 
+                  className="object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-navy/20 mix-blend-overlay" />
               </div>
@@ -114,12 +114,12 @@ export default function Sobre() {
         <div className="voxx-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="md:col-span-8 relative rounded-3xl overflow-hidden group aspect-[4/3] md:aspect-auto">
-              <Image 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80&auto=format&fit=crop" 
-                alt="Equipe de estratégia" 
-                fill 
+              <Image
+                src="/imagens/assessoria-imprensa-tv.jpg"
+                alt="Assessoria de imprensa — entrevista para TV"
+                fill
                 sizes="(max-width: 768px) 100vw, 60vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-navy/20 mix-blend-overlay" />
               <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl max-w-sm">
@@ -129,12 +129,12 @@ export default function Sobre() {
             </motion.div>
             <div className="md:col-span-4 grid grid-rows-2 gap-6">
                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }} className="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&auto=format&fit=crop" 
-                    alt="Desenvolvimento" 
-                    fill 
+                  <Image
+                    src="/imagens/assessoria-imprensa-nativa-fm.jpg"
+                    alt="Assessoria de imprensa — Nativa FM 101.1"
+                    fill
                     sizes="(max-width: 768px) 100vw, 30vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                </motion.div>
                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.4 }} className="bg-orange rounded-3xl p-8 flex flex-col justify-center text-white">

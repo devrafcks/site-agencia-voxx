@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './ProjectsCarousel.module.css'
 
@@ -16,11 +16,18 @@ type Project = {
 type Props = {
   projects: Project[]
   reverse?: boolean
+  initialSelected?: string
 }
 
-export default function ProjectsCarousel({ projects, reverse = false }: Props) {
+export default function ProjectsCarousel({ projects, reverse = false, initialSelected }: Props) {
   const doubled = [...projects, ...projects]
   const [selected, setSelected] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (initialSelected) {
+      setSelected(initialSelected)
+    }
+  }, [initialSelected])
 
   return (
     <>
@@ -31,14 +38,10 @@ export default function ProjectsCarousel({ projects, reverse = false }: Props) {
               <div
                 key={`r-${i}`}
                 className={`${styles.card} cursor-pointer`}
-                onClick={() =>
-                  setSelected(
-                    `https://images.unsplash.com/photo-${proj.image}?w=1400&q=90&auto=format&fit=crop`
-                  )
-                }
+                onClick={() => setSelected(proj.image)}
               >
                 <Image
-                  src={`https://images.unsplash.com/photo-${proj.image}?w=1000&q=80&auto=format&fit=crop`}
+                  src={proj.image}
                   alt={proj.title}
                   fill
                   sizes="520px"
@@ -58,7 +61,7 @@ export default function ProjectsCarousel({ projects, reverse = false }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-6"
             onClick={() => setSelected(null)}
           >
             <motion.div
@@ -66,16 +69,23 @@ export default function ProjectsCarousel({ projects, reverse = false }: Props) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.88, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-              className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl"
+              className="relative rounded-2xl overflow-hidden shadow-2xl bg-black max-h-[90dvh] max-w-[90vw] w-auto"
+              style={{ aspectRatio: 'auto' }}
               onClick={e => e.stopPropagation()}
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={selected}
                 alt="Projeto"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 80vw"
+                className="block max-h-[90dvh] max-w-[90vw] w-auto h-auto object-contain rounded-2xl"
               />
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center text-lg leading-none hover:bg-black/90 transition-colors"
+                aria-label="Fechar"
+              >
+                ×
+              </button>
             </motion.div>
           </motion.div>
         )}

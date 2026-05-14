@@ -1,15 +1,31 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SectionCTA from '@/components/SectionCTA'
 import ProjectsCarousel from '@/components/ProjectsCarousel'
 
 const projects = [
-  { id: 1, image: '1522202176988-66273c2fd55f', category: 'Branding', title: 'Rebranding Nexus Corp', desc: 'Identidade visual completa e posicionamento global para líder de logística.' },
-  { id: 2, image: '1460925895917-afdab827c52f', category: 'Web', title: 'Portal FinTech Solutions', desc: 'UX/UI e desenvolvimento de plataforma de investimentos de alta escala.' },
-  { id: 3, image: '1542744173-8e7e53415bb0', category: 'Performance', title: 'Lançamento Tech Alpha', desc: 'Estratégia de tráfego que gerou ROI de 450% em 30 dias.' },
-  { id: 4, image: '1486325212027-8081e485255e', category: 'Branding', title: 'StartUp Urban', desc: 'Criação de naming, voz e marca para mobilidade urbana sustentável.' },
-  { id: 5, image: '1551434678-e076c223a692', category: 'Web', title: 'E-commerce Luxury', desc: 'Plataforma headless focada em conversão e experiência de alto padrão.' },
-  { id: 6, image: '1497366216548-37526070297c', category: 'Performance', title: 'Growth B2B SaaS', desc: 'Escala de aquisição de leads qualificados via LinkedIn e Google Ads.' },
+  { id: 1,  image: '/projetos/nunes-gramas-dia-agricultura.png',         category: 'Redes Sociais',         title: 'Nunes Gramas',              desc: 'Criação de conteúdo estratégico e gestão de redes sociais para empresa de gramados.' },
+  { id: 2,  image: '/projetos/ana-helena-colageno.png',                  category: 'Redes Sociais',         title: 'Dra. Ana Helena',            desc: 'Posicionamento digital e conteúdo educativo para dermatologista.' },
+  { id: 3,  image: '/projetos/sincomercio-imposto-renda.jpg',            category: 'Redes Sociais',         title: 'Sincomercio',                desc: 'Gestão de redes sociais e criação de conteúdo para entidade comercial regional.' },
+  { id: 4,  image: '/projetos/katia-santos-mesobotox.jpg',               category: 'Redes Sociais',         title: 'Dra. Kátia dos Santos',      desc: 'Conteúdo educativo e posicionamento para especialista em harmonização orofacial.' },
+  { id: 5,  image: '/projetos/claudia-parenti-crescimento.jpg',          category: 'Redes Sociais',         title: 'Cláudia Parenti Pediatra',   desc: 'Criação visual e gestão de conteúdo para médica pediatra.' },
+  { id: 6,  image: '/projetos/festamilho-sao-roque-musica.jpg',          category: 'Redes Sociais',         title: '39ª Festa do Milho',         desc: 'Comunicação visual e promoção digital para evento religioso e cultural.' },
+  { id: 7,  image: '/projetos/gabriela-tsukamoto-saude.jpg',             category: 'Redes Sociais',         title: 'Dra. Gabriela Tsukamoto',    desc: 'Conteúdo de saúde e bem-estar para clínica de medicina metabólica.' },
+  { id: 8,  image: '/projetos/chocolates-aspen-doces-arabes.jpg',        category: 'Redes Sociais',         title: 'Chocolates Aspen',           desc: 'Criação visual e promoção para marca de chocolates e doces árabes.' },
+  { id: 9,  image: '/projetos/af4motors-logo.jpeg',                      category: 'Branding',              title: 'AF4 Motors',                 desc: 'Identidade visual premium para revendedora de seminovos e carros de luxo.' },
+  { id: 10, image: '/projetos/4irmaos-logo.jpeg',                        category: 'Branding',              title: '4 Irmãos',                   desc: 'Identidade visual sofisticada com conceito editorial para marca de alto padrão.' },
+  { id: 11, image: '/projetos/deltatoners-logo.jpg',                     category: 'Branding',              title: 'Delta Toners',               desc: 'Criação de logo e identidade visual para empresa de cartuchos e toners.' },
+  { id: 12, image: '/projetos/luciana-alves-logo.jpeg',                  category: 'Branding',              title: 'Luciana Alves Síndica',      desc: 'Logo e identidade visual profissional para síndica profissional.' },
+  { id: 13, image: '/projetos/flx-fiscolex-itapetininga.jpg',            category: 'Redes Sociais',         title: 'FLX Fiscolex',               desc: 'Conteúdo e presença digital para assessoria empresarial e contabilidade.' },
+  { id: 14, image: '/projetos/sou-europeu-portugal.jpg',                 category: 'Redes Sociais',         title: 'Sou Europeu',                desc: 'Estratégia de conteúdo para assessoria de dupla cidadania portuguesa.' },
+  { id: 15, image: '/projetos/stuque-odontologia-dia-maes.png',          category: 'Redes Sociais',         title: 'Stuque Odontologia',         desc: 'Criação de posts sazonais e gestão de redes sociais para clínica odontológica.' },
+  { id: 16, image: '/projetos/paroquia-santa-rita-instagram.jpeg',       category: 'Redes Sociais',         title: 'Paróquia Santa Rita',        desc: 'Estratégia e criação de conteúdo digital para instituição religiosa.' },
+  { id: 17, image: '/imagens/assessoria-imprensa-tv.jpg',                category: 'Assessoria de Imprensa',title: 'Entrevista para TV',          desc: 'Assessoria de imprensa com cobertura em veículo televisivo regional.' },
+  { id: 18, image: '/imagens/assessoria-imprensa-radio.jpg',             category: 'Assessoria de Imprensa',title: 'Participação em Rádio',       desc: 'Estratégia de assessoria de imprensa com inserção em programa de rádio e podcast.' },
+  { id: 19, image: '/imagens/assessoria-imprensa-nativa-fm.jpg',         category: 'Assessoria de Imprensa',title: 'Nativa FM 101.1',             desc: 'Assessoria de imprensa com visita e divulgação na Nativa FM Itapetininga.' },
+  { id: 20, image: '/imagens/producao-video-sincomercio.jpg',            category: 'Produção de Conteúdo',  title: 'Vídeo Sincomercio',          desc: 'Produção de vídeo institucional para o Sincomercio Regional Itapetininga.' },
+  { id: 21, image: '/imagens/producao-evento-show.jpg',                  category: 'Produção de Conteúdo',  title: 'Cobertura de Show',          desc: 'Cobertura fotográfica e de conteúdo em evento musical de grande porte.' },
 ]
 
 const fadeInUp = {
@@ -18,9 +34,20 @@ const fadeInUp = {
 }
 
 export default function Projetos() {
+  const [openImage, setOpenImage] = useState<string | undefined>(undefined)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const open = params.get('open')
+    if (open) setOpenImage(decodeURIComponent(open))
+  }, [])
+
   const half = Math.ceil(projects.length / 2)
   const row1 = projects.slice(0, half)
   const row2 = projects.slice(half)
+
+  const initialRow1 = row1.find(p => p.image === openImage) ? openImage : undefined
+  const initialRow2 = row2.find(p => p.image === openImage) ? openImage : undefined
 
   return (
     <main className="overflow-x-hidden bg-white selection:bg-orange/20 selection:text-navy">
@@ -43,10 +70,10 @@ export default function Projetos() {
         </div>
       </section>
 
-      {/* ─── Carrossel — invade o hero com margem negativa ────────── */}
+      {/* ─── Carrossel ────────── */}
       <section className="bg-white pb-24 -mt-16 md:-mt-40">
-        <ProjectsCarousel projects={row1} />
-        <ProjectsCarousel projects={row2} reverse />
+        <ProjectsCarousel projects={row1} initialSelected={initialRow1} />
+        <ProjectsCarousel projects={row2} reverse initialSelected={initialRow2} />
       </section>
 
       <SectionCTA />

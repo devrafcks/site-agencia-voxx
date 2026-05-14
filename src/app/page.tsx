@@ -203,30 +203,24 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
-              { img: '1522202176988-66273c2fd55f', cat: 'Redes Sociais', title: 'Presença constante, conteúdo estratégico e gestão profissional.', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
-              { img: '1460925895917-afdab827c52f', cat: 'Branding', title: 'Identidades visuais que geram reconhecimento e conexão emocional.', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
-              { img: '1542744173-8e7e53415bb0', cat: 'Assessoria de Imprensa', title: 'Visibilidade conquistada nos veículos certos do seu segmento.', span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
+              { img: '/projetos/nunes-gramas-dia-agricultura.png', open: '/projetos/nunes-gramas-dia-agricultura.png', label: 'Nunes Gramas', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
+              { img: '/projetos/af4motors-logo.jpeg',              open: '/projetos/af4motors-logo.jpeg',              label: 'AF4 Motors',    span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
+              { img: '/projetos/chocolates-aspen-doces-arabes.jpg',open: '/projetos/chocolates-aspen-doces-arabes.jpg',label: 'Chocolates Aspen',span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
             ].map((p, i) => (
-              <motion.div 
-                key={p.title}
+              <motion.div
+                key={p.label}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 0.98 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => router.push('/projetos')}
+                onClick={() => router.push(`/projetos?open=${encodeURIComponent(p.open)}`)}
                 className={`group relative overflow-hidden rounded-[2rem] cursor-pointer ${p.span}`}
               >
-                <Image src={`https://images.unsplash.com/photo-${p.img}?w=1200&q=80&auto=format&fit=crop`} alt={p.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                  <div className="md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="inline-block px-4 py-1.5 bg-orange text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4">
-                      {p.cat}
-                    </span>
-                    <h3 className="font-display font-normal text-white text-3xl md:text-4xl mb-2">{p.title}</h3>
-                    <div className="flex items-center gap-2 text-white/80 font-body md:opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                      Ver Projeto <ArrowRight size={16} />
-                    </div>
-                  </div>
+                <Image src={p.img} alt={p.label} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+                  <span className="inline-block self-start px-5 py-2 bg-orange text-white text-sm font-bold uppercase tracking-wider rounded-full shadow-lg">
+                    {p.label}
+                  </span>
                 </div>
               </motion.div>
             ))}
