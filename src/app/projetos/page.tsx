@@ -5,8 +5,8 @@ import SectionCTA from '@/components/SectionCTA'
 import ProjectsCarousel from '@/components/ProjectsCarousel'
 
 const projects = [
-  { id: 1,  image: '/projetos/nunes-gramas-dia-agricultura.png',         category: 'Redes Sociais',         title: 'Nunes Gramas',              desc: 'Criação de conteúdo estratégico e gestão de redes sociais para empresa de gramados.' },
-  { id: 2,  image: '/projetos/ana-helena-colageno.png',                  category: 'Redes Sociais',         title: 'Dra. Ana Helena',            desc: 'Posicionamento digital e conteúdo educativo para dermatologista.' },
+  { id: 1,  image: '/projetos/nunes-gramas-dia-agricultura.jpg',         category: 'Redes Sociais',         title: 'Nunes Gramas',              desc: 'Criação de conteúdo estratégico e gestão de redes sociais para empresa de gramados.' },
+  { id: 2,  image: '/projetos/ana-helena-colageno.jpg',                  category: 'Redes Sociais',         title: 'Dra. Ana Helena',            desc: 'Posicionamento digital e conteúdo educativo para dermatologista.' },
   { id: 3,  image: '/projetos/sincomercio-imposto-renda.jpg',            category: 'Redes Sociais',         title: 'Sincomercio',                desc: 'Gestão de redes sociais e criação de conteúdo para entidade comercial regional.' },
   { id: 4,  image: '/projetos/katia-santos-mesobotox.jpg',               category: 'Redes Sociais',         title: 'Dra. Kátia dos Santos',      desc: 'Conteúdo educativo e posicionamento para especialista em harmonização orofacial.' },
   { id: 5,  image: '/projetos/claudia-parenti-crescimento.jpg',          category: 'Redes Sociais',         title: 'Cláudia Parenti Pediatra',   desc: 'Criação visual e gestão de conteúdo para médica pediatra.' },
@@ -19,7 +19,7 @@ const projects = [
   { id: 12, image: '/projetos/luciana-alves-logo.jpeg',                  category: 'Branding',              title: 'Luciana Alves Síndica',      desc: 'Logo e identidade visual profissional para síndica profissional.' },
   { id: 13, image: '/projetos/flx-fiscolex-itapetininga.jpg',            category: 'Redes Sociais',         title: 'FLX Fiscolex',               desc: 'Conteúdo e presença digital para assessoria empresarial e contabilidade.' },
   { id: 14, image: '/projetos/sou-europeu-portugal.jpg',                 category: 'Redes Sociais',         title: 'Sou Europeu',                desc: 'Estratégia de conteúdo para assessoria de dupla cidadania portuguesa.' },
-  { id: 15, image: '/projetos/stuque-odontologia-dia-maes.png',          category: 'Redes Sociais',         title: 'Stuque Odontologia',         desc: 'Criação de posts sazonais e gestão de redes sociais para clínica odontológica.' },
+  { id: 15, image: '/projetos/stuque-odontologia-dia-maes.jpg',          category: 'Redes Sociais',         title: 'Stuque Odontologia',         desc: 'Criação de posts sazonais e gestão de redes sociais para clínica odontológica.' },
   { id: 16, image: '/projetos/paroquia-santa-rita-instagram.jpeg',       category: 'Redes Sociais',         title: 'Paróquia Santa Rita',        desc: 'Estratégia e criação de conteúdo digital para instituição religiosa.' },
   { id: 17, image: '/imagens/assessoria-imprensa-tv.jpg',                category: 'Assessoria de Imprensa',title: 'Entrevista para TV',          desc: 'Assessoria de imprensa com cobertura em veículo televisivo regional.' },
   { id: 18, image: '/imagens/assessoria-imprensa-radio.jpg',             category: 'Assessoria de Imprensa',title: 'Participação em Rádio',       desc: 'Estratégia de assessoria de imprensa com inserção em programa de rádio e podcast.' },

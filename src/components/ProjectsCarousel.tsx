@@ -45,6 +45,7 @@ export default function ProjectsCarousel({ projects, reverse = false, initialSel
                   alt={proj.title}
                   fill
                   sizes="520px"
+                  loading="lazy"
                   className={styles.cardImg}
                 />
                 <span className={styles.overlay}>Ver projeto →</span>

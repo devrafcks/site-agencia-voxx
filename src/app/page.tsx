@@ -203,7 +203,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
-              { img: '/projetos/nunes-gramas-dia-agricultura.png', open: '/projetos/nunes-gramas-dia-agricultura.png', label: 'Nunes Gramas', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
+              { img: '/projetos/nunes-gramas-dia-agricultura.jpg', open: '/projetos/nunes-gramas-dia-agricultura.jpg', label: 'Nunes Gramas', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
               { img: '/projetos/af4motors-logo.jpeg',              open: '/projetos/af4motors-logo.jpeg',              label: 'AF4 Motors',    span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
               { img: '/projetos/chocolates-aspen-doces-arabes.jpg',open: '/projetos/chocolates-aspen-doces-arabes.jpg',label: 'Chocolates Aspen',span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
             ].map((p, i) => (
