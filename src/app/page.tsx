@@ -45,7 +45,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="none"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/12902-242487547.mp4" type="video/mp4" />
@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-cream relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none" />
 
         <div className="voxx-container relative z-10">
           <motion.div
@@ -204,7 +204,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
               { img: '/projetos/nunes-gramas-dia-agricultura.jpg', open: '/projetos/nunes-gramas-dia-agricultura.jpg', label: 'Nunes Gramas', span: 'md:col-span-2 aspect-[4/5] md:aspect-[21/9]' },
-              { img: '/projetos/af4motors-logo.jpeg',              open: '/projetos/af4motors-logo.jpeg',              label: 'AF4 Motors',    span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
+              { img: '/projetos/sincomercio-imposto-renda.jpg',     open: '/projetos/sincomercio-imposto-renda.jpg',     label: 'Sincomercio',   span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
               { img: '/projetos/chocolates-aspen-doces-arabes.jpg',open: '/projetos/chocolates-aspen-doces-arabes.jpg',label: 'Chocolates Aspen',span: 'col-span-1 aspect-[4/5] md:aspect-[4/3]' },
             ].map((p, i) => (
               <motion.div

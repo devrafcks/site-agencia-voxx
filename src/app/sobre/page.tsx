@@ -46,21 +46,22 @@ export default function Sobre() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden shadow-2xl">
-                <Image
-                  src="/imagens/producao-video-sincomercio.jpg"
-                  alt="Produção de vídeo para cliente Sincomercio"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-navy/20 mix-blend-overlay" />
+              <div className="flex items-center justify-center py-16">
+                <div className="relative w-64 h-24">
+                  <Image
+                    src="/logo-white.png"
+                    alt="Voxx Comunicação Inteligente"
+                    fill
+                    sizes="256px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
 
-              <motion.div 
+              <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
-                className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl border border-navy/5 max-w-[240px]"
+                className="mt-16 bg-white p-8 rounded-3xl shadow-xl border border-navy/5 max-w-[240px] mx-auto lg:mx-0"
               >
                 <Star className="text-orange mb-4" weight="fill" size={32} />
                 <p className="font-display font-bold text-navy text-xl leading-tight">Inteligência em Comunicação</p>
@@ -72,7 +73,7 @@ export default function Sobre() {
 
       {/* ─── Timeline / Storytelling ─────────────────────────────────────────── */}
       <section className="py-32 bg-cream text-navy relative overflow-hidden" ref={containerRef}>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay" />
         
         <div className="voxx-container relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mb-12 md:mb-24 md:w-1/2">
@@ -112,8 +113,8 @@ export default function Sobre() {
       {/* ─── Editorial Image Grid ─────────────────────────────────────── */}
       <section className="py-32 bg-cream">
         <div className="voxx-container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="md:col-span-8 relative rounded-3xl overflow-hidden group aspect-[4/3] md:aspect-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[800px]">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="md:col-span-8 relative rounded-3xl overflow-hidden group aspect-[4/3] md:aspect-auto md:h-full">
               <Image
                 src="/imagens/assessoria-imprensa-tv.jpg"
                 alt="Assessoria de imprensa — entrevista para TV"
