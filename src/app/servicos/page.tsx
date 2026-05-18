@@ -108,7 +108,7 @@ export default function Servicos() {
                   <div className="w-16 h-16 bg-navy text-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-orange transition-colors duration-500 shadow-xl">
                     {s.icon}
                   </div>
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-navy mb-4">{s.title}</h3>
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-navy-medium mb-4">{s.title}</h3>
                   <p className="font-body text-muted text-lg leading-relaxed mb-8">{s.desc}</p>
                   
                   <div className="pt-8 border-t border-navy/10 space-y-4">
@@ -145,8 +145,8 @@ export default function Servicos() {
              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }} className="md:col-span-7">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
                    <Image
-                     src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop"
-                     alt="Ambiente de trabalho criativo de agência de comunicação"
+                     src="/diferencial.jpg"
+                     alt="Calendário e materiais de organização sobre fundo amarelo"
                      fill
                      sizes="(max-width: 768px) 100vw, 60vw"
                      className="object-cover"

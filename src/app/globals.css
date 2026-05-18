@@ -3,6 +3,7 @@
 @theme {
   --color-orange: #F39642;
   --color-navy: #003F5C;
+  --color-navy-medium: #10557A;
   --color-cream: #F5F0E6;
   --color-dark: #0E1C26;
   --color-muted: #6B7D8A;
@@ -13,6 +14,7 @@
 :root {
   --orange:       #F39642;
   --navy:         #003F5C;
+  --navy-medium:  #10557A;
   --cream:        #F5F0E6;
   --white:        #FFFFFF;
   --dark:         #0E1C26;

@@ -45,26 +45,24 @@ export default function Sobre() {
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="lg:col-span-5 relative">
-              <div className="flex items-center justify-center py-16">
-                <div className="relative w-64 h-24">
-                  <Image
-                    src="/logo-white.png"
-                    alt="Voxx Comunicação Inteligente"
-                    fill
-                    sizes="256px"
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="lg:col-span-5 relative flex flex-col justify-center">
+              <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
+                <Image
+                  src="/2808111_18386.jpg"
+                  alt="Voxx Inteligência e Comunicação"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
               </div>
 
               <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
-                className="mt-16 bg-white p-8 rounded-3xl shadow-xl border border-navy/5 max-w-[240px] mx-auto lg:mx-0"
+                className="-mt-8 md:-mt-12 relative z-20 bg-white p-6 md:p-8 rounded-3xl shadow-2xl border border-navy/5 max-w-[260px] mx-auto lg:ml-8 lg:mr-auto"
               >
                 <Star className="text-orange mb-4" weight="fill" size={32} />
-                <p className="font-display font-bold text-navy text-xl leading-tight">Inteligência em Comunicação</p>
+                <p className="font-display font-bold text-navy-medium text-lg md:text-xl leading-tight">Inteligência em Comunicação</p>
               </motion.div>
             </motion.div>
           </div>
@@ -172,7 +170,7 @@ export default function Sobre() {
                 <div className="w-12 h-12 bg-orange/10 text-orange rounded-xl flex items-center justify-center mb-6 font-display font-bold text-xl">
                   {i + 1}
                 </div>
-                <h3 className="font-display font-normal text-navy text-2xl mb-4">{v.title}</h3>
+                <h3 className="font-display font-normal text-navy-medium text-2xl mb-4">{v.title}</h3>
                 <p className="font-body text-muted leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}

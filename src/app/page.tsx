@@ -126,7 +126,7 @@ export default function Home() {
                   {item.num}
                 </div>
                 <div className="relative z-10">
-                  <h3 className="font-display font-normal text-navy text-2xl md:text-3xl mb-4 group-hover:text-orange transition-colors">{item.title}</h3>
+                  <h3 className="font-display font-normal text-navy-medium text-2xl md:text-3xl mb-4 group-hover:text-orange transition-colors">{item.title}</h3>
                   <p className="font-body text-muted text-lg leading-relaxed max-w-sm">{item.desc}</p>
                 </div>
               </motion.div>
@@ -168,7 +168,7 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-orange/20 text-orange flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-orange group-hover:text-white transition-all duration-300">
                   {s.icon}
                 </div>
-                <h3 className={`font-display font-bold text-2xl mb-4 ${s.text}`}>{s.title}</h3>
+                <h3 className="font-display font-bold text-2xl mb-4 text-navy-medium">{s.title}</h3>
                 <p className={`font-body leading-relaxed flex-1 ${s.text} opacity-70`}>{s.desc}</p>
               </motion.div>
             ))}
