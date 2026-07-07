@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Besley, DM_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { AccessibilityWidget } from "@/components/accessibility-widget";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -216,6 +217,9 @@ export default function RootLayout({
         <AccessibilityWidget />
         <WhatsAppButton />
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }

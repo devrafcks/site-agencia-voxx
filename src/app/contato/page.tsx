@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PaperPlaneTilt, CheckCircle, WarningCircle, CircleNotch } from '@phosphor-icons/react'
 import { sendContactEmail, type FormState } from './actions'
+import { trackEvent } from '@/lib/gtag'
 
 const fadeInUp = {
   hidden:  { opacity: 0, y: 30 },
@@ -42,7 +43,12 @@ export default function Contato() {
     const result = await sendContactEmail({ status: 'idle', message: '' }, new FormData(e.currentTarget))
     setState(result)
     setLoading(false)
-    if (result.status === 'success') formRef.current?.reset()
+    if (result.status === 'success') {
+      trackEvent('generate_lead', { form: 'contato' })
+      formRef.current?.reset()
+    } else {
+      trackEvent('form_error', { form: 'contato' })
+    }
   }
 
   return (
